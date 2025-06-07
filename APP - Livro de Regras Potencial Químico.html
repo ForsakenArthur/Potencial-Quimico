@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potencial Químico - Livro de Regras Interativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-pattern {
+            background-color: #1a202c;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a4150' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h5v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h9v-1h1v1h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v6H95v9H94v1H95v9H94v1H95v9H94v1H95v9H94v1H95v9H94v1H95v9H94v1H95v9H94v1H95v9H94v1H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H90v-1H89v-9H80v1H79v9H80v1H79v9H80v1H79v9H80v1H79v9H80v1H79v9H80v1H79v9H80v1H79v9H80v1H79v9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H70v-1H69v-9H60v1H59v9H60v1H59v9H60v1H59v9H60v1H59v9H60v1H59v9H60v1H59v9H60v1H59v9H60v1H59v9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H50v-1H49v-9H40v1H39v9H40v1H39v9H40v1H39v9H40v1H39v9H40v1H39v9H40v1H39v9H40v1H39v9H40v1H39v9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H30v-1H29v-9H20v1H19v9H20v1H19v9H20v1H19v9H20v1H19v9H20v1H19v9H20v1H19v9H20v1H19v9H20v1H19v9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H10v-1H9v-9H0v1H1v9H0v1H1v9H0v1H1v9H0v1H1v9H0v1H1v9H0v1H1v9H0v1H1v9H0v1H1v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .icon {
+            color: #f59e0b; /* Amber 500 */
+        }
+        h2 {
+            border-bottom: 3px solid #f59e0b;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+           color: #2563eb; /* Blue 600 */
+        }
+        .gemini-card {
+            min-height: 200px;
+            transition: all 0.3s ease-in-out;
+        }
+        .gemini-card.loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-pattern text-white py-12 shadow-2xl">
+        <div class="container mx-auto text-center px-4">
+            <i class="fas fa-atom text-5xl text-cyan-400"></i>
+            <h1 class="text-4xl md:text-6xl font-bold mt-4">Potencial Químico</h1>
+            <p class="text-xl md:text-2xl mt-2 text-gray-300">O Livro de Regras Interativo</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+    
+        <!-- Interactive Summary -->
+        <section id="summary" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Sumário Interativo</h2>
+            <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
+                <a href="#components" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
+                    Componentes
+                </a>
+                <a href="#fast-play" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
+                    Jogo Rápido
+                </a>
+                <a href="#detailed-rules" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
+                    Regras Detalhadas
+                </a>
+                <a href="#gemini-feature" class="bg-cyan-500 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
+                    <i class="fas fa-magic-sparkles mr-2"></i>Químico Criativo
+                </a>
+            </nav>
+        </section>
+
+        <!-- Intro -->
+        <section class="mb-12 text-center">
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                 <h2 class="text-3xl font-bold mb-4 inline-block">Bem-vindo ao universo de Potencial Químico!</h2>
+                 <p class="text-lg text-gray-600">Prepare-se para uma jornada eletrizante onde seu conhecimento e astúcia serão postos à prova. Compita para alcançar a estabilidade atômica, formando octetos, manipulando elétrons e utilizando o poder das reações químicas. Que comece a busca pela estabilidade!</p>
+            </div>
+        </section>
+
+        <!-- Componentes -->
+        <section id="components" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-boxes-stacked mr-2 icon"></i>Componentes do Jogo</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-user-circle text-4xl text-blue-500 mb-2"></i>
+                    <p class="font-semibold">Peças de Jogador</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-book-open text-4xl text-green-500 mb-2"></i>
+                    <p class="font-semibold">Cartas de Ensino</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-bolt text-4xl text-yellow-500 mb-2"></i>
+                    <p class="font-semibold">Cartas de Ação</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-circle text-4xl text-gray-500 mb-2"></i>
+                    <p class="font-semibold">Peças de Elétrons</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-atom text-4xl text-purple-500 mb-2"></i>
+                    <p class="font-semibold">Peças de Elementos</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-coins text-4xl text-amber-500 mb-2"></i>
+                    <p class="font-semibold">Moedas de Equipamento</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-university text-4xl text-indigo-500 mb-2"></i>
+                    <p class="font-semibold">Banco de Peças</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <i class="fas fa-gavel text-4xl text-red-500 mb-2"></i>
+                    <p class="font-semibold">Gabarito de Respostas</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Jogo Rápido (Fast Play) -->
+        <section id="fast-play" class="mb-12 bg-blue-50 p-6 md:p-8 rounded-2xl shadow-inner">
+            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-forward mr-2 icon"></i>Jogo Rápido (Fast Play)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">1. Objetivo Resumido</h3>
+                    <p>Acumule o maior número de <strong>Pontos de Estabilidade</strong>. Complete octetos (8 elétrons) em sua Peça de Jogador e nas Peças de Elementos que adquirir.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">2. Preparação Rápida</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Cada jogador escolhe uma Peça de Jogador.</li>
+                        <li>Cada um recebe 3 Cartas de Ação.</li>
+                        <li>Forme os montes de Cartas de Ensino e Ação.</li>
+                        <li>Organize o Banco de Peças e a reserva de Moedas.</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-3">3. Como Jogar (Resumo)</h3>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                           <h4 class="font-bold text-xl mb-2 text-green-600">Fase 1: Ensino/Desafio</h4>
+                           <p>Puxe uma Carta de Ensino. Se acertar, ganhe Pontuação para pegar Elétrons e Moedas de Equipamento.</p>
+                        </div>
+                         <div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                           <h4 class="font-bold text-xl mb-2 text-yellow-600">Fase 2: Ação</h4>
+                           <p>Puxe uma Carta de Ação. Use sua pontuação para pegar/devolver Elétrons e gaste moedas para usar Cartas de Ação.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-3">4. Fim de Jogo e Vitória</h3>
+                    <p>O jogo termina quando as Cartas de Ensino acabarem. O jogador com mais <strong>Pontos de Estabilidade</strong> vence!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regras Detalhadas -->
+        <section id="detailed-rules" class="mb-12">
+            <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-book mr-2 icon"></i>Regras Detalhadas</h2>
+            
+            <div class="space-y-8">
+                <!-- Visão Geral -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3">1. Visão Geral e Objetivo</h3>
+                    <p>Em "Potencial Químico" (5-8 jogadores), o objetivo é acumular <strong>Pontos de Estabilidade</strong>. Para isso, manipule elétrons para completar o "octeto" (8 elétrons) em sua peça e nas Peças de Elementos que controlar. Aquele com maior maestria química e estratégica, traduzida em mais pontos, será o vencedor.</p>
+                </div>
+
+                <!-- Preparação -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3">2. Preparação do Jogo (Setup)</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Escolham um jogador para ser o juiz (mestre de jogo).</li>
+                        <li>Cada jogador escolhe uma Peça de Jogador.</li>
+                        <li>Cada jogador recebe 3 Cartas de Ação secretas.</li>
+                        <li>Embaralhe e forme os montes de Cartas de Ensino e Ação.</li>
+                        <li>Organize o Banco de Peças e a reserva de Moedas.</li>
+                        <li>Decidam aleatoriamente quem começa. O jogo prossegue em sentido horário.</li>
+                    </ol>
+                </div>
+
+                <!-- Fluxo do Jogo -->
+                 <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3">3. O Fluxo do Jogo: As Duas Fases</h3>
+                    
+                    <div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-green-700 mb-2">3.1. Momento de Ensino/Desafio</h4>
+                        <p>No início do seu turno, puxe uma Carta de Ensino e tente resolver o desafio. Com a confirmação do juiz, o sucesso rende <strong>Pontuação</strong> (igual à dificuldade da carta) que se converte em dois benefícios para a próxima fase:</p>
+                        <ul class="list-disc list-inside pl-4 mt-2 space-y-1">
+                            <li><strong>Elétrons Potenciais:</strong> Direito de pegar ou devolver elétrons.</li>
+                            <li><strong>Moedas de Equipamento:</strong> Recebidas imediatamente da reserva.</li>
+                        </ul>
+                         <p class="mt-2 text-sm text-gray-600">Se errar, não há ganhos nesta fase.</p>
+                    </div>
+
+                     <div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-yellow-700 mb-2">3.2. Momento de Ação</h4>
+                        <p>Comece puxando 1 Carta de Ação (limite de 5 na mão). Depois, realize suas ações:</p>
+                         <ul class="list-disc list-inside pl-4 mt-2 space-y-2">
+                            <li><strong>Pegar/Devolver Peças:</strong> Use o direito ganho para pegar elétrons do Banco ou devolver o excesso, visando o octeto.</li>
+                            <li><strong>Adquirir Peças de Elementos:</strong> Ao pegar peças, você pode ter a sorte de puxar uma Peça de Elemento, que se liga covalentemente à sua peça principal.</li>
+                            <li><strong>Usar Cartas de Ação:</strong> Gaste Moedas para ativar os efeitos poderosos das suas cartas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pontuação -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3">4. Pontuação: Ganhando Pontos de Estabilidade (PE)</h3>
+                     <div class="flex flex-col md:flex-row gap-4 text-center">
+                        <div class="flex-1 bg-blue-100 p-4 rounded-lg">
+                            <i class="fas fa-plus-circle text-3xl text-blue-600 mb-2"></i>
+                            <h4 class="font-bold">Completar um Octeto</h4>
+                            <p>Ganhe <strong>1 PE</strong> sempre que atingir 8 elétrons em uma peça ou o número específico para um Elemento (ex: H: 2, C: 8).</p>
+                        </div>
+                        <div class="flex-1 bg-purple-100 p-4 rounded-lg">
+                             <i class="fas fa-shield-alt text-3xl text-purple-600 mb-2"></i>
+                             <h4 class="font-bold">Manter um Octeto</h4>
+                             <p>Ganhe <strong>1 PE adicional</strong> por cada octeto que você mantiver completo por uma rodada inteira (desde o seu último turno).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fim de Jogo -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3">5. Fim do Jogo e Vencedor</h3>
+                    <p>A partida termina quando a última Carta de Ensino for puxada e o turno do jogador atual for concluído. O jogador com mais <strong>Pontos de Estabilidade</strong> é declarado o Químico Mestre e vence!</p>
+                    <p class="mt-2 text-sm text-gray-700"><strong>Desempate:</strong> Em caso de empate, vence quem tiver mais Moedas de Equipamento. Se persistir, a vitória é compartilhada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini API Feature Section -->
+        <section id="gemini-feature" class="mb-12 bg-gray-800 text-white p-6 md:p-8 rounded-2xl shadow-2xl bg-pattern">
+            <h2 class="text-3xl font-bold mb-2 text-center text-white border-cyan-400"><i class="fas fa-magic-sparkles mr-2 text-cyan-400"></i>Químico Criativo ✨</h2>
+            <p class="text-center text-gray-300 mb-6 max-w-3xl mx-auto">Crie "Cartas de Ensino" personalizadas! Insira um tópico de química, escolha a dificuldade e deixe a IA gerar uma nova carta para o seu jogo.</p>
+            
+            <div class="max-w-4xl mx-auto bg-gray-700 p-6 rounded-xl shadow-inner">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label for="topicInput" class="block mb-2 text-sm font-medium text-gray-300">Tópico de Química</label>
+                        <input type="text" id="topicInput" placeholder="Ex: Estequiometria, Isomeria Óptica" class="bg-gray-600 border border-gray-500 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
+                    </div>
+                    <div>
+                        <label for="difficulty" class="block mb-2 text-sm font-medium text-gray-300">Dificuldade</label>
+                        <select id="difficulty" class="bg-gray-600 border border-gray-500 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
+                            <option value="1">1 (Fácil)</option>
+                            <option value="2">2 (Médio)</option>
+                            <option value="3">3 (Difícil)</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="generateCardBtn" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
+                    Gerar Carta de Ensino ✨
+                </button>
+            </div>
+
+            <div id="cardResult" class="mt-8 bg-white text-gray-800 rounded-xl shadow-lg p-6 gemini-card">
+                 <p class="text-center text-gray-500">Sua nova carta aparecerá aqui...</p>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 Potencial Químico. Que a sua estratégia seja sempre estável!</p>
+    </footer>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm mx-auto">
+            <div class="flex justify-between items-center mb-4">
+                 <h3 class="text-xl font-bold text-red-600">Ocorreu um Erro</h3>
+                 <button onclick="document.getElementById('errorModal').classList.add('hidden')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <p id="errorMessage" class="text-gray-700"></p>
+            <button onclick="document.getElementById('errorModal').classList.add('hidden')" class="mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full">
+                Fechar
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        const generateCardBtn = document.getElementById('generateCardBtn');
+        const cardResultDiv = document.getElementById('cardResult');
+        const errorModal = document.getElementById('errorModal');
+        const errorMessageP = document.getElementById('errorMessage');
+
+        generateCardBtn.addEventListener('click', generateCard);
+
+        async function generateCard() {
+            const topic = document.getElementById('topicInput').value;
+            const difficulty = document.getElementById('difficulty').value;
+            
+            if (!topic || topic.trim() === '') {
+                showError("Por favor, insira um tópico de química para gerar a carta.");
+                return;
+            }
+
+            cardResultDiv.innerHTML = '<div class="loader"></div>';
+            cardResultDiv.classList.add('loading');
+            
+            const prompt = `Você é um assistente de criação para o jogo de tabuleiro 'Potencial Químico'. Sua tarefa é criar conteúdo para novas "Cartas de Ensino". Gere uma carta com base nas seguintes especificações: Tópico de Química: '${topic}', Dificuldade: '${difficulty}'. A carta precisa ter um desafio claro (uma pergunta, um problema para resolver ou um conceito para explicar) e uma resposta concisa e correta para o gabarito do juiz.`;
+            const schema = {
+                type: "OBJECT",
+                properties: {
+                    difficulty: { type: "NUMBER" },
+                    topic: { type: "STRING" },
+                    challenge: { type: "STRING" },
+                    answer: { type: "STRING" }
+                },
+                required: ["difficulty", "topic", "challenge", "answer"]
+            };
+
+            try {
+                const apiKey = ""; // Leave empty for automatic injection
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ role: "user", parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: schema
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    const errorBody = await response.json();
+                    console.error("API Error Body:", errorBody);
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    
+                    const cardData = JSON.parse(result.candidates[0].content.parts[0].text);
+                    displayCard(cardData);
+
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                    showError("Não foi possível gerar a carta. A resposta da IA foi inesperada.");
+                }
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                showError("Falha ao comunicar com a IA. Verifique sua conexão ou tente novamente mais tarde.");
+                cardResultDiv.innerHTML = '<p class="text-center text-red-500">Falha ao gerar a carta.</p>';
+            } finally {
+                cardResultDiv.classList.remove('loading');
+            }
+        }
+
+        function displayCard(data) {
+            const cardHTML = `
+                <div class="border-l-4 border-green-500 pl-4 animate-fade-in">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <h4 class="text-xl font-bold text-green-700">Carta de Ensino</h4>
+                        <span class="bg-green-200 text-green-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">Dificuldade: ${data.difficulty}</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">${data.topic}</p>
+                    <p class="font-semibold mb-2">Desafio:</p>
+                    <p class="mb-4">${data.challenge}</p>
+                    <p class="font-semibold mb-2">Resposta (para o juiz):</p>
+                    <p class="text-sm bg-gray-100 p-3 rounded-lg">${data.answer}</p>
+                </div>
+            `;
+            cardResultDiv.innerHTML = cardHTML;
+        }
+
+        function showError(message) {
+             errorMessageP.textContent = message;
+             errorModal.classList.remove('hidden');
+             errorModal.classList.add('flex');
+        }
+
+    </script>
+</body>
+</html>
