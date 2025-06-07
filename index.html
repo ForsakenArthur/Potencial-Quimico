@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potencial Químico - Livro de Regras Digital</title>
+    <title>Potencial Químico - Livro de Regras</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,247 +35,190 @@
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header -->
-    <header class="bg-pattern text-white py-12 shadow-2xl">
+    <header class="bg-pattern text-white py-12 shadow-2xl relative">
         <div class="container mx-auto text-center px-4">
             <i class="fas fa-atom text-5xl text-cyan-400"></i>
-            <h1 class="text-4xl md:text-6xl font-bold mt-4">Potencial Químico</h1>
-            <p class="text-xl md:text-2xl mt-2 text-gray-300">O Livro de Regras Oficial</p>
+            <h1 class="text-4xl md:text-6xl font-bold mt-4" data-lang="pt">Potencial Químico</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mt-4 hidden" data-lang="en">Chemical Potential</h1>
+            <p class="text-xl md:text-2xl mt-2 text-gray-300" data-lang="pt">O Livro de Regras Oficial</p>
+            <p class="text-xl md:text-2xl mt-2 text-gray-300 hidden" data-lang="en">The Official Rulebook</p>
         </div>
+        <button id="lang-switcher" class="absolute top-4 right-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-md">
+            <i class="fas fa-globe mr-2"></i>English
+        </button>
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
-    
-        <!-- Interactive Summary -->
-        <section id="summary" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
-            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Sumário Interativo</h2>
-            <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
-                <a href="#components" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
-                    Componentes
-                </a>
-                <a href="#fast-play" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
-                    Jogo Rápido
-                </a>
-                <a href="#detailed-rules" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
-                    Regras Detalhadas
-                </a>
-                <a href="#about" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
-                    Sobre o Projeto
-                </a>
-                <a href="#credits" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
-                    Créditos
-                </a>
-            </nav>
-        </section>
+        <div data-lang="pt">
+            <!-- PT-BR CONTENT -->
+            <!-- Interactive Summary -->
+            <section id="summary-pt" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Sumário Interativo</h2>
+                <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
+                    <a href="#components-pt" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Componentes</a>
+                    <a href="#fast-play-pt" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Jogo Rápido</a>
+                    <a href="#detailed-rules-pt" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Regras Detalhadas</a>
+                    <a href="#about-pt" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Sobre o Projeto</a>
+                    <a href="#credits-pt" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Créditos</a>
+                </nav>
+            </section>
 
-        <!-- Intro -->
-        <section class="mb-12 text-center">
-            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-                 <h2 class="text-3xl font-bold mb-4 inline-block">Bem-vindo ao universo de Potencial Químico!</h2>
-                 <p class="text-lg text-gray-600">Prepare-se para uma jornada eletrizante onde seu conhecimento e astúcia serão postos à prova. Compita para alcançar a estabilidade atômica, formando octetos, manipulando elétrons e utilizando o poder das reações químicas.</p>
-            </div>
-        </section>
+            <!-- Intro -->
+            <section class="mb-12 text-center">
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 inline-block">Bem-vindo ao universo de Potencial Químico!</h2>
+                    <p class="text-lg text-gray-600">Prepare-se para uma jornada eletrizante onde seu conhecimento e astúcia serão postos à prova. Compita para alcançar a estabilidade atômica, formando octetos, manipulando elétrons e utilizando o poder das reações químicas.</p>
+                </div>
+            </section>
 
-        <!-- Componentes -->
-        <section id="components" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-boxes-stacked mr-2 icon"></i>Componentes do Jogo</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-user-circle text-4xl text-blue-500 mb-2"></i>
-                    <p class="font-semibold">Peças de Jogador</p>
+            <!-- Componentes -->
+            <section id="components-pt" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-boxes-stacked mr-2 icon"></i>Componentes do Jogo</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-user-circle text-4xl text-blue-500 mb-2"></i><p class="font-semibold">Peças de Jogador</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-book-open text-4xl text-green-500 mb-2"></i><p class="font-semibold">Cartas de Ensino</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-bolt text-4xl text-yellow-500 mb-2"></i><p class="font-semibold">Cartas de Ação</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-circle text-4xl text-gray-500 mb-2"></i><p class="font-semibold">Peças de Elétrons</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-atom text-4xl text-purple-500 mb-2"></i><p class="font-semibold">Peças de Elementos</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-coins text-4xl text-amber-500 mb-2"></i><p class="font-semibold">Moedas de Equipamento</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-university text-4xl text-indigo-500 mb-2"></i><p class="font-semibold">Banco de Peças</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-gavel text-4xl text-red-500 mb-2"></i><p class="font-semibold">Gabarito de Respostas</p></div>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-book-open text-4xl text-green-500 mb-2"></i>
-                    <p class="font-semibold">Cartas de Ensino</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-bolt text-4xl text-yellow-500 mb-2"></i>
-                    <p class="font-semibold">Cartas de Ação</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-circle text-4xl text-gray-500 mb-2"></i>
-                    <p class="font-semibold">Peças de Elétrons</p>
-                </div>
-                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-atom text-4xl text-purple-500 mb-2"></i>
-                    <p class="font-semibold">Peças de Elementos</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-coins text-4xl text-amber-500 mb-2"></i>
-                    <p class="font-semibold">Moedas de Equipamento</p>
-                </div>
-                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-university text-4xl text-indigo-500 mb-2"></i>
-                    <p class="font-semibold">Banco de Peças</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                    <i class="fas fa-gavel text-4xl text-red-500 mb-2"></i>
-                    <p class="font-semibold">Gabarito de Respostas</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Jogo Rápido (Fast Play) -->
-        <section id="fast-play" class="mb-12 bg-blue-50 p-6 md:p-8 rounded-2xl shadow-inner">
-            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-forward mr-2 icon"></i>Jogo Rápido (Fast Play)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-3">1. Objetivo Resumido</h3>
-                    <p>Acumule o maior número de <strong>Pontos de Estabilidade</strong>. Complete octetos (8 elétrons) em sua Peça de Jogador e nas Peças de Elementos que adquirir.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-3">2. Preparação Rápida</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Cada jogador escolhe uma Peça de Jogador.</li>
-                        <li>Cada um recebe 3 Cartas de Ação.</li>
-                        <li>Forme os montes de Cartas de Ensino e Ação.</li>
-                        <li>Organize o Banco de Peças e a reserva de Moedas.</li>
-                    </ul>
-                </div>
-                <div class="md:col-span-2">
-                    <h3 class="text-2xl font-bold mb-3">3. Como Jogar (Resumo)</h3>
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
-                           <h4 class="font-bold text-xl mb-2 text-green-600">Fase 1: Ensino/Desafio</h4>
-                           <p>Puxe uma Carta de Ensino. Se acertar, ganhe Pontuação para pegar Elétrons e Moedas de Equipamento.</p>
-                        </div>
-                         <div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
-                           <h4 class="font-bold text-xl mb-2 text-yellow-600">Fase 2: Ação</h4>
-                           <p>Puxe uma Carta de Ação. Use sua pontuação para pegar/devolver Elétrons e gaste moedas para usar Cartas de Ação.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="md:col-span-2">
-                    <h3 class="text-2xl font-bold mb-3">4. Fim de Jogo e Vitória</h3>
-                    <p>O jogo termina quando as Cartas de Ensino acabarem. O jogador com mais <strong>Pontos de Estabilidade</strong> vence!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Regras Detalhadas -->
-        <section id="detailed-rules" class="mb-12">
-            <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-book mr-2 icon"></i>Regras Detalhadas</h2>
+            </section>
             
-            <div class="space-y-8">
-                <!-- Visão Geral -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">1. Visão Geral e Objetivo</h3>
-                    <p>Em "Potencial Químico", os jogadores (5 a 8) mergulham no mundo da química, competindo para alcançar a maior estabilidade. O objetivo primário é manipular elétrons para completar o "octeto" (uma configuração de 8 elétrons de valência) em sua Peça de Jogador e em quaisquer Peças de Elementos que venha a controlar. Cada octeto completo e mantido gera <strong>Pontos de Estabilidade (PE)</strong>. O jogador que demonstrar maior maestria química e estratégica, traduzida no maior número de pontos ao final da partida, será o vencedor.</p>
+            <!-- Jogo Rápido (Fast Play) -->
+            <section id="fast-play-pt" class="mb-12 bg-blue-50 p-6 md:p-8 rounded-2xl shadow-inner">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-forward mr-2 icon"></i>Jogo Rápido (Fast Play)</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div><h3 class="text-2xl font-bold mb-3">1. Objetivo Resumido</h3><p>Acumule o maior número de <strong>Pontos de Estabilidade</strong>. Complete octetos (8 elétrons) em sua Peça de Jogador e nas Peças de Elementos que adquirir.</p></div>
+                    <div><h3 class="text-2xl font-bold mb-3">2. Preparação Rápida</h3><ul class="list-disc list-inside space-y-2"><li>Cada jogador escolhe uma Peça de Jogador.</li><li>Cada um recebe 3 Cartas de Ação.</li><li>Forme os montes de Cartas de Ensino e Ação.</li><li>Organize o Banco de Peças e a reserva de Moedas.</li></ul></div>
+                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">3. Como Jogar (Resumo)</h3><div class="flex flex-col md:flex-row gap-4"><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500"><h4 class="font-bold text-xl mb-2 text-green-600">Fase 1: Ensino/Desafio</h4><p>Puxe uma Carta de Ensino. Se acertar, ganhe Pontuação para pegar Elétrons e Moedas de Equipamento.</p></div><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500"><h4 class="font-bold text-xl mb-2 text-yellow-600">Fase 2: Ação</h4><p>Puxe uma Carta de Ação. Use sua pontuação para pegar/devolver Elétrons e gaste moedas para usar Cartas de Ação.</p></div></div></div>
+                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">4. Fim de Jogo e Vitória</h3><p>O jogo termina quando as Cartas de Ensino acabarem. O jogador com mais <strong>Pontos de Estabilidade</strong> vence!</p></div>
                 </div>
+            </section>
 
-                <!-- Preparação -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">2. Preparação do Jogo (Setup)</h3>
-                    <ol class="list-decimal list-inside space-y-3">
-                        <li><strong>Escolha do Juiz:</strong> Um jogador é designado como juiz (ou mestre de jogo). Ele não compete, mas gerencia o gabarito, valida as respostas dos desafios e supervisiona a pontuação.</li>
-                        <li><strong>Componentes Iniciais:</strong> Cada jogador escolhe uma Peça de Jogador e a posiciona em sua frente. Em seguida, cada jogador recebe 3 Cartas de Ação iniciais, que devem ser mantidas em segredo dos outros.</li>
-                        <li><strong>Montes de Cartas:</strong> As Cartas de Ensino são embaralhadas (todas juntas ou separadas por dificuldade, a critério do grupo) e formam um monte de compra. O mesmo é feito com as Cartas de Ação.</li>
-                        <li><strong>Reservas Comuns:</strong> O Banco de Peças (com todos os Elétrons e Elementos) e a reserva de Moedas de Equipamento são posicionados em um local central e acessível a todos.</li>
-                        <li><strong>Início do Jogo:</strong> Decide-se aleatoriamente quem começa. O jogo prossegue em sentido horário a partir do primeiro jogador.</li>
-                    </ol>
+            <!-- Regras Detalhadas -->
+            <section id="detailed-rules-pt" class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-book mr-2 icon"></i>Regras Detalhadas</h2>
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">1. Visão Geral e Objetivo</h3><p>Em "Potencial Químico", os jogadores (5 a 8) mergulham no mundo da química, competindo para alcançar a maior estabilidade. O objetivo primário é manipular elétrons para completar o "octeto" (uma configuração de 8 elétrons de valência) em sua Peça de Jogador e em quaisquer Peças de Elementos que venha a controlar. Cada octeto completo e mantido gera <strong>Pontos de Estabilidade (PE)</strong>. O jogador que demonstrar maior maestria química e estratégica, traduzida no maior número de pontos ao final da partida, será o vencedor.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">2. Preparação do Jogo (Setup)</h3><ol class="list-decimal list-inside space-y-3"><li><strong>Escolha do Juiz:</strong> Um jogador é designado como juiz (ou mestre de jogo). Ele não compete, mas gerencia o gabarito, valida as respostas dos desafios e supervisiona a pontuação.</li><li><strong>Componentes Iniciais:</strong> Cada jogador escolhe uma Peça de Jogador e a posiciona em sua frente. Em seguida, cada jogador recebe 3 Cartas de Ação iniciais, que devem ser mantidas em segredo dos outros.</li><li><strong>Montes de Cartas:</strong> As Cartas de Ensino são embaralhadas (todas juntas ou separadas por dificuldade, a critério do grupo) e formam um monte de compra. O mesmo é feito com as Cartas de Ação.</li><li><strong>Reservas Comuns:</strong> O Banco de Peças (com todos os Elétrons e Elementos) e a reserva de Moedas de Equipamento são posicionados em um local central e acessível a todos.</li><li><strong>Início do Jogo:</strong> Decide-se aleatoriamente quem começa. O jogo prossegue em sentido horário a partir do primeiro jogador.</li></ol></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">3. O Fluxo do Jogo: As Duas Fases</h3><p class="mb-4">O turno de cada jogador é dividido em duas fases principais, que ocorrem em sequência: o <strong>Momento de Ensino/Desafio</strong> e o <strong>Momento de Ação</strong>.</p><div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg"><h4 class="text-xl font-bold text-green-700 mb-2">3.1. Momento de Ensino/Desafio</h4><p>Esta fase foca na aquisição de conhecimento e recursos.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Puxar Carta:</strong> O jogador da vez puxa a carta do topo do monte de Cartas de Ensino.</li><li><strong>Resolver o Desafio:</strong> O jogador lê o desafio e propõe sua resposta. O juiz consulta o gabarito e avalia se a resposta está correta ou se assemelha suficientemente ao esperado.</li><li><strong>Recompensas por Sucesso:</strong> Se a resposta for validada como correta, o jogador ganha uma <strong>Pontuação</strong> igual à dificuldade da carta (1, 2 ou 3). Essa pontuação concede dois benefícios:<ul class="list-disc list-inside pl-6 mt-1"><li><strong>Elétrons Potenciais:</strong> O direito de pegar OU devolver do Banco um número de peças igual à pontuação obtida. Esta ação é executada na fase seguinte.</li><li><strong>Moedas de Equipamento:</strong> O jogador recebe imediatamente da reserva um número de Moedas igual à pontuação e as armazena sobre sua Peça de Jogador.</li></ul></li><li><strong>Falha no Desafio:</strong> Se errar a resposta, o jogador não ganha Pontuação, Elétrons Potenciais ou Moedas de Equipamento. O turno prossegue para o Momento de Ação sem esses benefícios.</li></ol></div><div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg"><h4 class="text-xl font-bold text-yellow-700 mb-2">3.2. Momento de Ação</h4><p>Nesta fase, os recursos são utilizados estrategicamente.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Puxar Carta de Ação:</strong> O jogador puxa 1 Carta de Ação e a adiciona à sua mão. O limite de cartas na mão é de 5. Se já tiver 5, não pode puxar outra.</li><li><strong>Realizar Ações:</strong> O jogador pode realizar as seguintes ações, em qualquer ordem:<ul class="list-disc list-inside pl-6 mt-1 space-y-2"><li><strong>Manipular Elétrons:</strong> Se ganhou Elétrons Potenciais, pode pegar peças do Banco para tentar formar um octeto ou devolver peças em excesso para atingir a estabilidade (ex: se tem 9 elétrons, pode devolver 1). A escolha é flexível até o limite ganho.</li><li><strong>Adquirir Peças de Elementos:</strong> Ao pegar peças do Banco, o jogador pode, com sorte, puxar uma Peça de Elemento. Se isso ocorrer, ela é imediatamente "ligada" à sua Peça de Jogador e pode receber elétrons para buscar sua própria estabilidade.</li><li><strong>Usar Cartas de Ação:</strong> O jogador pode jogar uma ou mais Cartas de Ação de sua mão, pagando o custo em Moedas de Equipamento para a reserva. Os efeitos são variados e devem ser seguidos conforme a descrição da carta.</li></ul></li><li><strong>Finalizar o Turno:</strong> O jogador declara o fim do seu turno, e o jogo passa para o próximo jogador à esquerda.</li></ol></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">4. Pontuação: Ganhando Pontos de Estabilidade (PE)</h3><p class="mb-4">A pontuação é o reflexo da estabilidade química alcançada. O juiz é responsável por validar e anunciar os pontos.</p><ul class="list-disc list-inside space-y-3"><li><strong>Completar um Octeto (1 PE):</strong> Sempre que um jogador atinge a configuração estável em uma de suas peças (8 elétrons para a Peça de Jogador, ou o número específico para um Elemento, como 2 para o Hidrogênio), ele ganha <strong>imediatamente</strong> 1 Ponto de Estabilidade. O jogador deve anunciar o feito para validação do juiz.</li><li><strong>Manter um Octeto (1 PE por octeto):</strong> No início de cada um dos seus turnos, o jogador ganha <strong>1 PE adicional</strong> por cada octeto que ele conseguiu manter completo desde o início do seu turno anterior. Isso recompensa a estabilidade contínua.</li></ul></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">5. Fim do Jogo e Vencedor</h3><ul class="list-disc list-inside space-y-2"><li><strong>Condição de Fim de Jogo:</strong> A partida termina quando a última Carta de Ensino for puxada. O jogador que a puxou completa seu turno normalmente. Após isso, o jogo se encerra.</li><li><strong>Contagem Final:</strong> Os jogadores contam seu total de Pontos de Estabilidade.</li><li><strong>Vencedor:</strong> O jogador com o maior número de Pontos de Estabilidade é declarado o "Químico Mestre" e vence o jogo.</li><li><strong>Critérios de Desempate:</strong> Se houver empate nos pontos, o jogador com o maior número de Moedas de Equipamento restantes vence. Se o empate persistir, a vitória é compartilhada entre os jogadores empatados.</li></ul></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. Detalhes Adicionais e Esclarecimentos</h3><ul class="list-disc list-inside space-y-3"><li><strong>Banco de Peças Esgotado:</strong> Se as Peças de Elétrons ou de um tipo de Elemento se esgotarem, os jogadores não podem mais adquiri-las até que sejam devolvidas ao Banco.</li><li><strong>Limite de Cartas de Ação:</strong> Um jogador pode ter no máximo 5 Cartas de Ação na mão. Se precisar puxar uma carta e já tiver 5, ele não puxa. O jogador pode optar por descartar uma carta no final do seu turno para abrir espaço.</li><li><strong>Moedas de Equipamento Quebradas:</strong> As Moedas devem ser manuseadas com cuidado sobre a Peça do Jogador. Se um jogador derrubá-las acidentalmente, elas são consideradas "quebradas" e devem ser movidas para uma área de descarte, saindo do jogo.</li><li><strong>Ligações Covalentes:</strong> Efeitos de cartas que permitem ligações entre jogadores devem ter suas regras especificadas na própria carta. Geralmente, isso pode implicar que os jogadores envolvidos se tornem alvos de efeitos em conjunto ou compartilhem benefícios/prejuízos.</li></ul></div>
                 </div>
+            </section>
+            
+            <section id="about-pt" class="mb-12 bg-purple-50 p-6 md:p-8 rounded-2xl shadow-inner">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-info-circle mr-2 icon"></i>Sobre o Projeto</h2>
+                <div class="max-w-4xl mx-auto text-center"><p class="text-lg text-gray-700 leading-relaxed">"Potencial Químico" foi concebido como uma ferramenta didática inovadora, projetada para transformar o aprendizado de química em uma experiência interativa e estratégica. O objetivo principal é oferecer um recurso adaptável que possa ser utilizado tanto no ensino médio quanto no superior, reforçando conceitos químicos fundamentais através de uma jogabilidade envolvente que equilibra conhecimento, estratégia e um pouco de sorte.</p></div>
+            </section>
 
-                <!-- Fluxo do Jogo -->
-                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">3. O Fluxo do Jogo: As Duas Fases</h3>
-                    <p class="mb-4">O turno de cada jogador é dividido em duas fases principais, que ocorrem em sequência: o <strong>Momento de Ensino/Desafio</strong> e o <strong>Momento de Ação</strong>.</p>
-                    
-                    <div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
-                        <h4 class="text-xl font-bold text-green-700 mb-2">3.1. Momento de Ensino/Desafio</h4>
-                        <p>Esta fase foca na aquisição de conhecimento e recursos.</p>
-                        <ol class="list-decimal list-inside pl-4 mt-2 space-y-2">
-                            <li><strong>Puxar Carta:</strong> O jogador da vez puxa a carta do topo do monte de Cartas de Ensino.</li>
-                            <li><strong>Resolver o Desafio:</strong> O jogador lê o desafio e propõe sua resposta. O juiz consulta o gabarito e avalia se a resposta está correta ou se assemelha suficientemente ao esperado.</li>
-                            <li><strong>Recompensas por Sucesso:</strong> Se a resposta for validada como correta, o jogador ganha uma <strong>Pontuação</strong> igual à dificuldade da carta (1, 2 ou 3). Essa pontuação concede dois benefícios:
-                                <ul class="list-disc list-inside pl-6 mt-1">
-                                    <li><strong>Elétrons Potenciais:</strong> O direito de pegar OU devolver do Banco um número de peças igual à pontuação obtida. Esta ação é executada na fase seguinte.</li>
-                                    <li><strong>Moedas de Equipamento:</strong> O jogador recebe imediatamente da reserva um número de Moedas igual à pontuação e as armazena sobre sua Peça de Jogador.</li>
-                                </ul>
-                            </li>
-                             <li><strong>Falha no Desafio:</strong> Se errar a resposta, o jogador não ganha Pontuação, Elétrons Potenciais ou Moedas de Equipamento. O turno prossegue para o Momento de Ação sem esses benefícios.</li>
-                        </ol>
-                    </div>
+            <section id="credits-pt" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Créditos e Contato</h2>
+                <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center"><p class="text-lg font-semibold">Desenvolvido por</p><p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p><div class="mt-4 border-t pt-4"><p class="text-gray-600">Dúvidas, sugestões ou parcerias?</p><a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"><i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com</a></div></div>
+            </section>
+        </div>
 
-                     <div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg">
-                        <h4 class="text-xl font-bold text-yellow-700 mb-2">3.2. Momento de Ação</h4>
-                        <p>Nesta fase, os recursos são utilizados estrategicamente.</p>
-                         <ol class="list-decimal list-inside pl-4 mt-2 space-y-2">
-                             <li><strong>Puxar Carta de Ação:</strong> O jogador puxa 1 Carta de Ação e a adiciona à sua mão. O limite de cartas na mão é de 5. Se já tiver 5, não pode puxar outra.</li>
-                             <li><strong>Realizar Ações:</strong> O jogador pode realizar as seguintes ações, em qualquer ordem:
-                                <ul class="list-disc list-inside pl-6 mt-1 space-y-2">
-                                     <li><strong>Manipular Elétrons:</strong> Se ganhou Elétrons Potenciais, pode pegar peças do Banco para tentar formar um octeto ou devolver peças em excesso para atingir a estabilidade (ex: se tem 9 elétrons, pode devolver 1). A escolha é flexível até o limite ganho.</li>
-                                     <li><strong>Adquirir Peças de Elementos:</strong> Ao pegar peças do Banco, o jogador pode, com sorte, puxar uma Peça de Elemento. Se isso ocorrer, ela é imediatamente "ligada" à sua Peça de Jogador e pode receber elétrons para buscar sua própria estabilidade.</li>
-                                     <li><strong>Usar Cartas de Ação:</strong> O jogador pode jogar uma ou mais Cartas de Ação de sua mão, pagando o custo em Moedas de Equipamento para a reserva. Os efeitos são variados e devem ser seguidos conforme a descrição da carta.</li>
-                                </ul>
-                             </li>
-                              <li><strong>Finalizar o Turno:</strong> O jogador declara o fim do seu turno, e o jogo passa para o próximo jogador à esquerda.</li>
-                         </ol>
-                    </div>
+        <div data-lang="en" class="hidden">
+            <!-- ENGLISH CONTENT -->
+            <!-- Interactive Summary -->
+            <section id="summary-en" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Interactive Summary</h2>
+                <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
+                    <a href="#components-en" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Components</a>
+                    <a href="#fast-play-en" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Fast Play</a>
+                    <a href="#detailed-rules-en" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Detailed Rules</a>
+                    <a href="#about-en" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">About the Project</a>
+                    <a href="#credits-en" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Credits</a>
+                </nav>
+            </section>
+
+            <!-- Intro -->
+            <section class="mb-12 text-center">
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 inline-block">Welcome to the world of Chemical Potential!</h2>
+                    <p class="text-lg text-gray-600">Get ready for an electrifying journey where your knowledge and cunning will be put to the test. Compete to achieve atomic stability by forming octets, manipulating electrons, and using the power of chemical reactions.</p>
                 </div>
+            </section>
 
-                <!-- Pontuação -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">4. Pontuação: Ganhando Pontos de Estabilidade (PE)</h3>
-                     <p class="mb-4">A pontuação é o reflexo da estabilidade química alcançada. O juiz é responsável por validar e anunciar os pontos.</p>
-                     <ul class="list-disc list-inside space-y-3">
-                        <li><strong>Completar um Octeto (1 PE):</strong> Sempre que um jogador atinge a configuração estável em uma de suas peças (8 elétrons para a Peça de Jogador, ou o número específico para um Elemento, como 2 para o Hidrogênio), ele ganha <strong>imediatamente</strong> 1 Ponto de Estabilidade. O jogador deve anunciar o feito para validação do juiz.</li>
-                        <li><strong>Manter um Octeto (1 PE por octeto):</strong> No início de cada um dos seus turnos, o jogador ganha <strong>1 PE adicional</strong> por cada octeto que ele conseguiu manter completo desde o início do seu turno anterior. Isso recompensa a estabilidade contínua.</li>
-                     </ul>
+            <!-- Components -->
+            <section id="components-en" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-boxes-stacked mr-2 icon"></i>Game Components</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-user-circle text-4xl text-blue-500 mb-2"></i><p class="font-semibold">Player Pieces</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-book-open text-4xl text-green-500 mb-2"></i><p class="font-semibold">Teaching Cards</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-bolt text-4xl text-yellow-500 mb-2"></i><p class="font-semibold">Action Cards</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-circle text-4xl text-gray-500 mb-2"></i><p class="font-semibold">Electron Pieces</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-atom text-4xl text-purple-500 mb-2"></i><p class="font-semibold">Element Pieces</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-coins text-4xl text-amber-500 mb-2"></i><p class="font-semibold">Equipment Coins</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-university text-4xl text-indigo-500 mb-2"></i><p class="font-semibold">Piece Bank</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-gavel text-4xl text-red-500 mb-2"></i><p class="font-semibold">Answer Key</p></div>
                 </div>
+            </section>
 
-                <!-- Fim de Jogo -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">5. Fim do Jogo e Vencedor</h3>
-                     <ul class="list-disc list-inside space-y-2">
-                        <li><strong>Condição de Fim de Jogo:</strong> A partida termina quando a última Carta de Ensino for puxada. O jogador que a puxou completa seu turno normalmente. Após isso, o jogo se encerra.</li>
-                        <li><strong>Contagem Final:</strong> Os jogadores contam seu total de Pontos de Estabilidade.</li>
-                        <li><strong>Vencedor:</strong> O jogador com o maior número de Pontos de Estabilidade é declarado o "Químico Mestre" e vence o jogo.</li>
-                         <li><strong>Critérios de Desempate:</strong> Se houver empate nos pontos, o jogador com o maior número de Moedas de Equipamento restantes vence. Se o empate persistir, a vitória é compartilhada entre os jogadores empatados.</li>
-                     </ul>
+            <!-- Fast Play -->
+            <section id="fast-play-en" class="mb-12 bg-blue-50 p-6 md:p-8 rounded-2xl shadow-inner">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-forward mr-2 icon"></i>Fast Play</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div><h3 class="text-2xl font-bold mb-3">1. Quick Objective</h3><p>Accumulate the most <strong>Stability Points</strong>. Complete octets (8 electrons) on your Player Piece and any Element Pieces you acquire.</p></div>
+                    <div><h3 class="text-2xl font-bold mb-3">2. Quick Setup</h3><ul class="list-disc list-inside space-y-2"><li>Each player chooses a Player Piece.</li><li>Each player receives 3 Action Cards.</li><li>Create the Teaching and Action Card decks.</li><li>Organize the Piece Bank and the coin reserve.</li></ul></div>
+                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">3. How to Play (Summary)</h3><div class="flex flex-col md:flex-row gap-4"><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500"><h4 class="font-bold text-xl mb-2 text-green-600">Phase 1: Teaching/Challenge</h4><p>Draw a Teaching Card. If you answer correctly, gain Score to get Electrons and Equipment Coins.</p></div><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500"><h4 class="font-bold text-xl mb-2 text-yellow-600">Phase 2: Action</h4><p>Draw an Action Card. Use your score to take/return Electrons and spend coins to use Action Cards.</p></div></div></div>
+                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">4. End of Game and Victory</h3><p>The game ends when the Teaching Cards run out. The player with the most <strong>Stability Points</strong> wins!</p></div>
                 </div>
+            </section>
 
-                <!-- Detalhes Adicionais -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-3">6. Detalhes Adicionais e Esclarecimentos</h3>
-                     <ul class="list-disc list-inside space-y-3">
-                        <li><strong>Banco de Peças Esgotado:</strong> Se as Peças de Elétrons ou de um tipo de Elemento se esgotarem, os jogadores não podem mais adquiri-las até que sejam devolvidas ao Banco.</li>
-                        <li><strong>Limite de Cartas de Ação:</strong> Um jogador pode ter no máximo 5 Cartas de Ação na mão. Se precisar puxar uma carta e já tiver 5, ele não puxa. O jogador pode optar por descartar uma carta no final do seu turno para abrir espaço.</li>
-                        <li><strong>Moedas de Equipamento Quebradas:</strong> As Moedas devem ser manuseadas com cuidado sobre a Peça do Jogador. Se um jogador derrubá-las acidentalmente, elas são consideradas "quebradas" e devem ser movidas para uma área de descarte, saindo do jogo.</li>
-                        <li><strong>Ligações Covalentes:</strong> Efeitos de cartas que permitem ligações entre jogadores devem ter suas regras especificadas na própria carta. Geralmente, isso pode implicar que os jogadores envolvidos se tornem alvos de efeitos em conjunto ou compartilhem benefícios/prejuízos.</li>
-                     </ul>
+            <!-- Detailed Rules -->
+            <section id="detailed-rules-en" class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-book mr-2 icon"></i>Detailed Rules</h2>
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">1. Overview and Objective</h3><p>In "Chemical Potential," players (5 to 8) delve into the world of chemistry, competing to achieve the greatest stability. The primary objective is to manipulate electrons to complete the "octet" (a configuration of 8 valence electrons) on your Player Piece and on any Element Pieces you control. Each completed and maintained octet generates <strong>Stability Points (SP)</strong>. The player who demonstrates the greatest chemical and strategic mastery, translated into the highest number of points at the end of the game, will be the winner.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">2. Game Setup</h3><ol class="list-decimal list-inside space-y-3"><li><strong>Choosing the Judge:</strong> One player is designated as the judge (or game master). They do not compete but manage the answer key, validate challenge responses, and oversee scoring.</li><li><strong>Initial Components:</strong> Each player chooses a Player Piece and places it in front of them. Then, each player receives 3 initial Action Cards, which should be kept secret from others.</li><li><strong>Card Decks:</strong> The Teaching Cards are shuffled (either all together or separated by difficulty, at the group's discretion) and form a draw pile. The same is done with the Action Cards.</li><li><strong>Common Reserves:</strong> The Piece Bank (with all Electrons and Elements) and the reserve of Equipment Coins are placed in a central location accessible to all.</li><li><strong>Starting the Game:</strong> It is randomly decided who starts. The game proceeds clockwise from the first player.</li></ol></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">3. Game Flow: The Two Phases</h3><p class="mb-4">Each player's turn is divided into two main phases, which occur in sequence: the <strong>Teaching/Challenge Moment</strong> and the <strong>Action Moment</strong>.</p><div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg"><h4 class="text-xl font-bold text-green-700 mb-2">3.1. Teaching/Challenge Moment</h4><p>This phase focuses on acquiring knowledge and resources.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Card:</strong> The current player draws the top card from the Teaching Card deck.</li><li><strong>Solve the Challenge:</strong> The player reads the challenge and proposes their answer. The judge consults the answer key and assesses whether the response is correct or sufficiently similar to what is expected.</li><li><strong>Rewards for Success:</strong> If the answer is validated as correct, the player earns a <strong>Score</strong> equal to the card's difficulty (1, 2, or 3). This score grants two benefits:<ul class="list-disc list-inside pl-6 mt-1"><li><strong>Potential Electrons:</strong> The right to take OR return a number of pieces from the Bank equal to the score obtained. This action is performed in the next phase.</li><li><strong>Equipment Coins:</strong> The player immediately receives a number of Coins from the reserve equal to the score and stores them on their Player Piece.</li></ul></li><li><strong>Challenge Failure:</strong> If the player answers incorrectly, they do not gain Score, Potential Electrons, or Equipment Coins. The turn proceeds to the Action Moment without these benefits.</li></ol></div><div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg"><h4 class="text-xl font-bold text-yellow-700 mb-2">3.2. Action Moment</h4><p>In this phase, resources are used strategically.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Action Card:</strong> The player draws 1 Action Card and adds it to their hand. The hand limit is 5 cards. If they already have 5, they cannot draw another.</li><li><strong>Perform Actions:</strong> The player can perform the following actions in any order:<ul class="list-disc list-inside pl-6 mt-1 space-y-2"><li><strong>Manipulate Electrons:</strong> If they gained Potential Electrons, they can take pieces from the Bank to try to form an octet or return excess pieces to achieve stability (e.g., if they have 9 electrons, they can return 1). The choice is flexible up to the limit earned.</li><li><strong>Acquire Element Pieces:</strong> When taking pieces from the Bank, the player may be lucky enough to draw an Element Piece. If this occurs, it is immediately "bonded" to their Player Piece and can receive electrons to seek its own stability.</li><li><strong>Use Action Cards:</strong> The player can play one or more Action Cards from their hand by paying the cost in Equipment Coins to the reserve. The effects are varied and must be followed as described on the card.</li></ul></li><li><strong>End of Turn:</strong> The player declares the end of their turn, and the game passes to the next player on the left.</li></ol></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">4. Scoring: Earning Stability Points (SP)</h3><p class="mb-4">Scoring reflects the chemical stability achieved. The judge is responsible for validating and announcing the points.</p><ul class="list-disc list-inside space-y-3"><li><strong>Completing an Octet (1 SP):</strong> Whenever a player achieves a stable configuration on one of their pieces (8 electrons for the Player Piece, or the specific number for an Element, such as 2 for Hydrogen), they <strong>immediately</strong> gain 1 Stability Point. The player must announce the achievement for the judge's validation.</li><li><strong>Maintaining an Octet (1 SP per octet):</strong> At the beginning of each of their turns, the player gains <strong>1 additional SP</strong> for each octet they have managed to keep complete since the beginning of their previous turn. This rewards continuous stability.</li></ul></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">5. End of Game and Winner</h3><ul class="list-disc list-inside space-y-2"><li><strong>End Game Condition:</strong> The game ends when the last Teaching Card is drawn. The player who drew it completes their turn normally. After that, the game concludes.</li><li><strong>Final Count:</strong> Players count their total Stability Points.</li><li><strong>Winner:</strong> The player with the most Stability Points is declared the "Master Chemist" and wins the game.</li><li><strong>Tie-breaker Criteria:</strong> In case of a tie in points, the player with the most remaining Equipment Coins wins. If the tie persists, the victory is shared among the tied players.</li></ul></div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. Additional Details and Clarifications</h3><ul class="list-disc list-inside space-y-3"><li><strong>Depleted Piece Bank:</strong> If the Electron or a type of Element Pieces run out, players can no longer acquire them until some are returned to the Bank.</li><li><strong>Action Card Limit:</strong> A player can have a maximum of 5 Action Cards in hand. If they need to draw a card and already have 5, they do not draw. The player may choose to discard a card at the end of their turn to make space.</li><li><strong>Broken Equipment Coins:</strong> Coins must be handled carefully on the Player Piece. If a player accidentally drops them, they are considered "broken" and must be moved to a discard area, leaving the game.</li><li><strong>Covalent Bonds:</strong> Card effects that allow bonds between players must have their rules specified on the card itself. Generally, this may mean that the involved players become targets of effects together or share benefits/detriments.</li></ul></div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- About Section -->
-        <section id="about" class="mb-12 bg-purple-50 p-6 md:p-8 rounded-2xl shadow-inner">
-            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-info-circle mr-2 icon"></i>Sobre o Projeto</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    "Potencial Químico" foi concebido como uma ferramenta didática inovadora, projetada para transformar o aprendizado de química em uma experiência interativa e estratégica. O objetivo principal é oferecer um recurso adaptável que possa ser utilizado tanto no ensino médio quanto no superior, reforçando conceitos químicos fundamentais através de uma jogabilidade envolvente que equilibra conhecimento, estratégia e um pouco de sorte.
-                </p>
-            </div>
-        </section>
+            <section id="about-en" class="mb-12 bg-purple-50 p-6 md:p-8 rounded-2xl shadow-inner">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-info-circle mr-2 icon"></i>About the Project</h2>
+                <div class="max-w-4xl mx-auto text-center"><p class="text-lg text-gray-700 leading-relaxed">"Chemical Potential" was conceived as an innovative educational tool, designed to transform learning chemistry into an interactive and strategic experience. The main objective is to offer an adaptable resource that can be used in both high school and higher education, reinforcing fundamental chemical concepts through engaging gameplay that balances knowledge, strategy, and a bit of luck.</p></div>
+            </section>
 
-        <!-- Credits Section -->
-        <section id="credits" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Créditos e Contato</h2>
-            <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center">
-                <p class="text-lg font-semibold">Desenvolvido por</p>
-                <p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p>
-                <div class="mt-4 border-t pt-4">
-                    <p class="text-gray-600">Dúvidas, sugestões ou parcerias?</p>
-                    <a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300">
-                        <i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com
-                    </a>
-                </div>
-            </div>
-        </section>
-
+            <section id="credits-en" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Credits and Contact</h2>
+                <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center"><p class="text-lg font-semibold">Developed by</p><p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p><div class="mt-4 border-t pt-4"><p class="text-gray-600">Questions, suggestions, or partnerships?</p><a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"><i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com</a></div></div>
+            </section>
+        </div>
     </main>
     
     <footer class="bg-gray-800 text-white text-center p-6 mt-12">
-        <p>&copy; 2025 Potencial Químico.</p>
+        <p>&copy; 2025 Chemical Potential.</p>
     </footer>
 
+    <script>
+        const langSwitcher = document.getElementById('lang-switcher');
+        const ptElements = document.querySelectorAll('[data-lang="pt"]');
+        const enElements = document.querySelectorAll('[data-lang="en"]');
+        let currentLang = 'pt';
+
+        langSwitcher.addEventListener('click', () => {
+            if (currentLang === 'pt') {
+                ptElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                langSwitcher.innerHTML = '<i class="fas fa-globe mr-2"></i>Português';
+                document.documentElement.lang = 'en';
+                currentLang = 'en';
+            } else {
+                enElements.forEach(el => el.classList.add('hidden'));
+                ptElements.forEach(el => el.classList.remove('hidden'));
+                langSwitcher.innerHTML = '<i class="fas fa-globe mr-2"></i>English';
+                document.documentElement.lang = 'pt-BR';
+                currentLang = 'pt';
+            }
+        });
+    </script>
 </body>
 </html>
