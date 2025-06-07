@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potencial Químico - Livro de Regras Interativo</title>
+    <title>Potencial Químico - Livro de Regras Final</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,27 +30,6 @@
         h3 {
            color: #2563eb; /* Blue 600 */
         }
-        .gemini-card {
-            min-height: 200px;
-            transition: all 0.3s ease-in-out;
-        }
-        .gemini-card.loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -60,7 +39,7 @@
         <div class="container mx-auto text-center px-4">
             <i class="fas fa-atom text-5xl text-cyan-400"></i>
             <h1 class="text-4xl md:text-6xl font-bold mt-4">Potencial Químico</h1>
-            <p class="text-xl md:text-2xl mt-2 text-gray-300">O Livro de Regras Interativo</p>
+            <p class="text-xl md:text-2xl mt-2 text-gray-300">O Livro de Regras Oficial</p>
         </div>
     </header>
 
@@ -79,8 +58,11 @@
                 <a href="#detailed-rules" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
                     Regras Detalhadas
                 </a>
-                <a href="#gemini-feature" class="bg-cyan-500 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
-                    <i class="fas fa-magic-sparkles mr-2"></i>Químico Criativo
+                <a href="#about" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
+                    Sobre o Projeto
+                </a>
+                <a href="#credits" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">
+                    Créditos
                 </a>
             </nav>
         </section>
@@ -244,33 +226,28 @@
             </div>
         </section>
 
-        <!-- Gemini API Feature Section -->
-        <section id="gemini-feature" class="mb-12 bg-gray-800 text-white p-6 md:p-8 rounded-2xl shadow-2xl bg-pattern">
-            <h2 class="text-3xl font-bold mb-2 text-center text-white border-cyan-400"><i class="fas fa-magic-sparkles mr-2 text-cyan-400"></i>Químico Criativo ✨</h2>
-            <p class="text-center text-gray-300 mb-6 max-w-3xl mx-auto">Crie "Cartas de Ensino" personalizadas! Insira um tópico de química, escolha a dificuldade e deixe a IA gerar uma nova carta para o seu jogo.</p>
-            
-            <div class="max-w-4xl mx-auto bg-gray-700 p-6 rounded-xl shadow-inner">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label for="topicInput" class="block mb-2 text-sm font-medium text-gray-300">Tópico de Química</label>
-                        <input type="text" id="topicInput" placeholder="Ex: Estequiometria, Isomeria Óptica" class="bg-gray-600 border border-gray-500 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
-                    </div>
-                    <div>
-                        <label for="difficulty" class="block mb-2 text-sm font-medium text-gray-300">Dificuldade</label>
-                        <select id="difficulty" class="bg-gray-600 border border-gray-500 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
-                            <option value="1">1 (Fácil)</option>
-                            <option value="2">2 (Médio)</option>
-                            <option value="3">3 (Difícil)</option>
-                        </select>
-                    </div>
-                </div>
-                <button id="generateCardBtn" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
-                    Gerar Carta de Ensino ✨
-                </button>
+        <!-- About Section -->
+        <section id="about" class="mb-12 bg-purple-50 p-6 md:p-8 rounded-2xl shadow-inner">
+            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-info-circle mr-2 icon"></i>Sobre o Projeto</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    "Potencial Químico" foi concebido como uma ferramenta didática inovadora, projetada para transformar o aprendizado de química em uma experiência interativa e estratégica. O objetivo principal é oferecer um recurso adaptável que possa ser utilizado tanto no ensino médio quanto no superior, reforçando conceitos químicos fundamentais através de uma jogabilidade envolvente que equilibra conhecimento, estratégia e um pouco de sorte.
+                </p>
             </div>
+        </section>
 
-            <div id="cardResult" class="mt-8 bg-white text-gray-800 rounded-xl shadow-lg p-6 gemini-card">
-                 <p class="text-center text-gray-500">Sua nova carta aparecerá aqui...</p>
+        <!-- Credits Section -->
+        <section id="credits" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Créditos e Contato</h2>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center">
+                <p class="text-lg font-semibold">Desenvolvido por</p>
+                <p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p>
+                <div class="mt-4 border-t pt-4">
+                    <p class="text-gray-600">Dúvidas, sugestões ou parcerias?</p>
+                    <a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -280,122 +257,5 @@
         <p>&copy; 2024 Potencial Químico. Que a sua estratégia seja sempre estável!</p>
     </footer>
 
-    <!-- Error Modal -->
-    <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm mx-auto">
-            <div class="flex justify-between items-center mb-4">
-                 <h3 class="text-xl font-bold text-red-600">Ocorreu um Erro</h3>
-                 <button onclick="document.getElementById('errorModal').classList.add('hidden')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-            </div>
-            <p id="errorMessage" class="text-gray-700"></p>
-            <button onclick="document.getElementById('errorModal').classList.add('hidden')" class="mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full">
-                Fechar
-            </button>
-        </div>
-    </div>
-    
-    <script>
-        const generateCardBtn = document.getElementById('generateCardBtn');
-        const cardResultDiv = document.getElementById('cardResult');
-        const errorModal = document.getElementById('errorModal');
-        const errorMessageP = document.getElementById('errorMessage');
-
-        generateCardBtn.addEventListener('click', generateCard);
-
-        async function generateCard() {
-            const topic = document.getElementById('topicInput').value;
-            const difficulty = document.getElementById('difficulty').value;
-            
-            if (!topic || topic.trim() === '') {
-                showError("Por favor, insira um tópico de química para gerar a carta.");
-                return;
-            }
-
-            cardResultDiv.innerHTML = '<div class="loader"></div>';
-            cardResultDiv.classList.add('loading');
-            
-            const prompt = `Você é um assistente de criação para o jogo de tabuleiro 'Potencial Químico'. Sua tarefa é criar conteúdo para novas "Cartas de Ensino". Gere uma carta com base nas seguintes especificações: Tópico de Química: '${topic}', Dificuldade: '${difficulty}'. A carta precisa ter um desafio claro (uma pergunta, um problema para resolver ou um conceito para explicar) e uma resposta concisa e correta para o gabarito do juiz.`;
-            const schema = {
-                type: "OBJECT",
-                properties: {
-                    difficulty: { type: "NUMBER" },
-                    topic: { type: "STRING" },
-                    challenge: { type: "STRING" },
-                    answer: { type: "STRING" }
-                },
-                required: ["difficulty", "topic", "challenge", "answer"]
-            };
-
-            try {
-                const apiKey = ""; // Leave empty for automatic injection
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const payload = {
-                    contents: [{ role: "user", parts: [{ text: prompt }] }],
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: schema
-                    }
-                };
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    const errorBody = await response.json();
-                    console.error("API Error Body:", errorBody);
-                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
-                }
-
-                const result = await response.json();
-                
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    
-                    const cardData = JSON.parse(result.candidates[0].content.parts[0].text);
-                    displayCard(cardData);
-
-                } else {
-                    console.error("Unexpected API response structure:", result);
-                    showError("Não foi possível gerar a carta. A resposta da IA foi inesperada.");
-                }
-
-            } catch (error) {
-                console.error("Error calling Gemini API:", error);
-                showError("Falha ao comunicar com a IA. Verifique sua conexão ou tente novamente mais tarde.");
-                cardResultDiv.innerHTML = '<p class="text-center text-red-500">Falha ao gerar a carta.</p>';
-            } finally {
-                cardResultDiv.classList.remove('loading');
-            }
-        }
-
-        function displayCard(data) {
-            const cardHTML = `
-                <div class="border-l-4 border-green-500 pl-4 animate-fade-in">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <h4 class="text-xl font-bold text-green-700">Carta de Ensino</h4>
-                        <span class="bg-green-200 text-green-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">Dificuldade: ${data.difficulty}</span>
-                    </div>
-                    <p class="text-sm text-gray-500 mb-3">${data.topic}</p>
-                    <p class="font-semibold mb-2">Desafio:</p>
-                    <p class="mb-4">${data.challenge}</p>
-                    <p class="font-semibold mb-2">Resposta (para o juiz):</p>
-                    <p class="text-sm bg-gray-100 p-3 rounded-lg">${data.answer}</p>
-                </div>
-            `;
-            cardResultDiv.innerHTML = cardHTML;
-        }
-
-        function showError(message) {
-             errorMessageP.textContent = message;
-             errorModal.classList.remove('hidden');
-             errorModal.classList.add('flex');
-        }
-
-    </script>
 </body>
 </html>
