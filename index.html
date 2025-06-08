@@ -16,6 +16,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
+            background-image: linear-gradient(to bottom, #f8fafc, #ffffff);
         }
         .hero {
             height: 100vh;
@@ -41,16 +42,17 @@
         .hero-content {
             position: relative;
             z-index: 10;
+            padding-bottom: 10vh;
         }
         .icon {
-            color: #f59e0b; /* Amber 500 */
+            color: #f59e0b;
         }
         h2 {
             border-bottom: 3px solid #f59e0b;
             padding-bottom: 0.5rem;
         }
         h3 {
-           color: #2563eb; /* Blue 600 */
+           color: #2563eb;
         }
         .back-to-top {
             transition: opacity 0.3s, visibility 0.3s;
@@ -68,6 +70,54 @@
             60% {
                 transform: translateY(-10px);
             }
+        }
+        .interactive-diagram-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem;
+            min-height: 150px;
+        }
+        .diagram-piece {
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: black;
+            border: 2px solid #6b7280;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            user-select: none;
+        }
+        .player-piece {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #1d4ed8;
+            width: 50px;
+            height: 50px;
+        }
+        .element-piece {
+            background-color: #e5e7eb;
+            border-color: #9ca3af;
+        }
+        .electron-piece {
+             width: 35px;
+            height: 35px;
+        }
+        .diagram-piece.highlight {
+            box-shadow: 0 0 15px 3px #3b82f6;
+            border-color: #3b82f6;
+        }
+         .electron-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
         }
     </style>
 </head>
@@ -91,7 +141,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-4 md:p-8 relative z-10 bg-gray-100 -mt-2">
+    <main class="container mx-auto p-4 md:p-8 relative z-10 bg-gray-100">
         <div data-lang="pt">
             <!-- PT-BR CONTENT -->
             <!-- Interactive Summary -->
@@ -108,7 +158,7 @@
             </section>
 
             <!-- Intro -->
-            <section class="mb-12">
+            <section id="intro-pt" class="mb-12">
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div class="text-center md:text-left">
@@ -169,9 +219,31 @@
                     <div id="velocidade-pt" class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">3. Velocidade de Jogo (Regra Opcional)</h3><p class="mb-4">Antes de iniciar a partida, o grupo pode decidir a velocidade do jogo. Isso ajusta a quantidade de recursos ganhos e a duração da partida.</p><div class="grid md:grid-cols-2 gap-4"><div class="bg-gray-100 p-4 rounded-lg border"><strong>Velocidade Padrão (Fator 1x):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Fácil: ganha 1 peça/moeda</li><li>Médio: ganha 2 peças/moedas</li><li>Difícil: ganha 3 peças/moedas</li></ul></div><div class="bg-gray-100 p-4 rounded-lg border"><strong>Velocidade Avançada (Fator 2x):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Fácil: ganha 2 peças/moedas</li><li>Médio: ganha 4 peças/moedas</li><li>Difícil: ganha 6 peças/moedas</li></ul></div></div></div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">4. O Fluxo do Jogo: As Duas Fases</h3><p class="mb-4">O turno de cada jogador é dividido em duas fases principais, que ocorrem em sequência: o <strong>Momento de Ensino/Desafio</strong> e o <strong>Momento de Ação</strong>.</p><div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg"><h4 class="text-xl font-bold text-green-700 mb-2">4.1. Momento de Ensino/Desafio</h4><p>Esta fase foca na aquisição de conhecimento e recursos.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Puxar Carta:</strong> O jogador da vez puxa a carta do topo do monte de Cartas de Ensino.</li><li><strong>Resolver o Desafio:</strong> O jogador lê o desafio e propõe sua resposta. O juiz consulta o gabarito e avalia se a resposta está correta ou se assemelha suficientemente ao esperado.</li><li><strong>Recompensas por Sucesso:</strong> Se a resposta for validada, o jogador ganha uma <strong>Pontuação</strong> baseada na dificuldade da carta, multiplicada pelo fator de velocidade de jogo. Essa pontuação concede dois benefícios:<ul class="list-disc list-inside pl-6 mt-1"><li><strong>Elétrons Potenciais:</strong> O direito de pegar OU devolver do Banco um número de peças igual à pontuação final.</li><li><strong>Moedas de Equipamento:</strong> Recebe imediatamente da reserva um número de Moedas igual à pontuação final.</li></ul></li><li><strong>Falha no Desafio:</strong> Se errar a resposta, o jogador não ganha Pontuação, Elétrons Potenciais ou Moedas de Equipamento.</li></ol></div><div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg"><h4 class="text-xl font-bold text-yellow-700 mb-2">4.2. Momento de Ação</h4><p>Nesta fase, os recursos são utilizados estrategicamente.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Puxar Carta de Ação:</strong> O jogador puxa 1 Carta de Ação e a adiciona à sua mão (limite de 5).</li><li><strong>Realizar Ações:</strong> O jogador pode realizar as seguintes ações, em qualquer ordem:<ul class="list-disc list-inside pl-6 mt-1 space-y-2"><li><strong>Manipular Elétrons:</strong> Usa o direito ganho para pegar peças do Banco ou devolver o excesso.</li><li><strong>Adquirir Peças de Elementos:</strong> Ao pegar peças, pode ter a sorte de puxar uma Peça de Elemento.</li><li><strong>Usar Cartas de Ação:</strong> Gasta Moedas para ativar efeitos de suas cartas.</li></ul></li><li><strong>Finalizar o Turno:</strong> O jogador declara o fim do seu turno.</li></ol></div></div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">5. Pontuação: Ganhando Pontos de Estabilidade (PE)</h3><p class="mb-4">A pontuação é o reflexo da estabilidade química alcançada. O juiz é responsável por validar e anunciar os pontos.</p><ul class="list-disc list-inside space-y-3"><li><strong>Completar um Octeto (1 PE):</strong> Sempre que um jogador atinge a configuração estável em uma de suas peças (8 elétrons para a Peça de Jogador, ou o número específico para um Elemento, como 2 para o Hidrogênio), ele ganha <strong>imediatamente</strong> 1 Ponto de Estabilidade.</li><li><strong>Manter um Octeto (1 PE por octeto):</strong> No início de cada um dos seus turnos, o jogador ganha <strong>1 PE adicional</strong> por cada octeto que ele conseguiu manter completo desde o início do seu turno anterior.</li></ul>
-                        <figure class="my-6 text-center">
-                            <img src="https://i.imgur.com/5GmDCKd.png" alt="Exemplo de pontuação com octeto e dueto completos." class="mx-auto rounded-lg shadow-md max-w-sm w-full">
-                            <figcaption class="mt-2 text-sm text-gray-600 italic">Peças do jogador A: o jogador A completou seu octeto, a peça do jogador está ligada a um elemento, o hidrogênio, que está com seu dueto completo. Sendo assim, o jogador A deve ganhar 2 pontos de estabilidade imediatamente, e se conseguir manter essa configuração, ganhará mais 2 pontos de estabilidade todo turno.</figcaption>
+                        <figure id="interactive-diagram-pt" class="my-6">
+                           <div class="interactive-diagram-container">
+                                <div class="flex items-center gap-2">
+                                    <div class="electron-stack" data-group="exclusive-electrons-pt">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                    <div class="electron-stack" data-group="exclusive-electrons-pt">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                    <div class="electron-stack" data-group="exclusive-electrons-pt">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                </div>
+                                <div id="player-a-pt" class="diagram-piece player-piece">A</div>
+                                <div class="electron-stack" data-group="shared-electrons-pt">
+                                    <div class="diagram-piece electron-piece">e⁻</div>
+                                    <div class="diagram-piece electron-piece">e⁻</div>
+                                </div>
+                                <div id="hydrogen-pt" class="diagram-piece element-piece">H</div>
+                           </div>
+                           <figcaption class="mt-4 text-sm text-center text-gray-600 italic">Passe o mouse ou toque nas peças A e H para ver os octetos/duetos!</figcaption>
+                           <figcaption class="mt-2 text-sm text-gray-600 italic">Peças do jogador A: o jogador A completou seu octeto, a peça do jogador está ligada a um elemento, o hidrogênio, que está com seu dueto completo. Sendo assim, o jogador A deve ganhar 2 pontos de estabilidade imediatamente, e se conseguir manter essa configuração, ganhará mais 2 pontos de estabilidade todo turno.</figcaption>
                         </figure>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. Fim do Jogo e Vencedor</h3><ul class="list-disc list-inside space-y-2"><li><strong>Condição de Fim de Jogo:</strong> A partida termina quando a última Carta de Ensino for puxada. O jogador que a puxou completa seu turno normalmente. Após isso, o jogo se encerra.</li><li><strong>Vencedor:</strong> O jogador com o maior número de Pontos de Estabilidade é declarado o "Químico Mestre" e vence o jogo.</li><li><strong>Critérios de Desempate:</strong> Em caso de empate, o jogador com mais Moedas de Equipamento vence. Se persistir, a vitória é compartilhada.</li></ul></div>
@@ -206,7 +278,7 @@
             </section>
 
             <!-- Intro -->
-            <section class="mb-12">
+            <section id="intro-en" class="mb-12">
                  <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div class="text-center md:text-left">
@@ -267,9 +339,31 @@
                     <div id="velocidade-en" class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">3. Game Speed (Optional Rule)</h3><p class="mb-4">Before starting the game, the group can decide on the game's speed. This adjusts the amount of resources gained and the duration of the match.</p><div class="grid md:grid-cols-2 gap-4"><div class="bg-gray-100 p-4 rounded-lg border"><strong>Standard Speed (1x Factor):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Easy: gain 1 piece/coin</li><li>Medium: gain 2 pieces/coins</li><li>Hard: gain 3 pieces/coins</li></ul></div><div class="bg-gray-100 p-4 rounded-lg border"><strong>Advanced Speed (2x Factor):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Easy: gain 2 pieces/coins</li><li>Medium: gain 4 pieces/coins</li><li>Hard: gain 6 pieces/coins</li></ul></div></div></div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">4. Game Flow: The Two Phases</h3><p class="mb-4">Each player's turn is divided into two main phases, which occur in sequence: the <strong>Teaching/Challenge Moment</strong> and the <strong>Action Moment</strong>.</p><div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg"><h4 class="text-xl font-bold text-green-700 mb-2">4.1. Teaching/Challenge Moment</h4><p>This phase focuses on acquiring knowledge and resources.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Card:</strong> The current player draws the top card from the Teaching Card deck.</li><li><strong>Solve the Challenge:</strong> The player reads the challenge and proposes their answer. The judge consults the answer key and assesses whether the response is correct or sufficiently similar to what is expected.</li><li><strong>Rewards for Success:</strong> If the answer is validated, the player earns a <strong>Score</strong> based on the card's difficulty, multiplied by the game speed factor. This score grants two benefits:<ul class="list-disc list-inside pl-6 mt-1"><li><strong>Potential Electrons:</strong> The right to take OR return from the Bank a number of pieces equal to the final score.</li><li><strong>Equipment Coins:</strong> Immediately receives from the reserve a number of Coins equal to the final score.</li></ul></li><li><strong>Challenge Failure:</strong> If the player answers incorrectly, they do not gain Score, Potential Electrons, or Equipment Coins.</li></ol></div><div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg"><h4 class="text-xl font-bold text-yellow-700 mb-2">4.2. Action Moment</h4><p>In this phase, resources are used strategically.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Action Card:</strong> The player draws 1 Action Card and adds it to their hand (limit of 5).</li><li><strong>Perform Actions:</strong> The player can perform the following actions in any order:<ul class="list-disc list-inside pl-6 mt-1 space-y-2"><li><strong>Manipulate Electrons:</strong> Uses the earned right to take pieces from the Bank or return excess ones.</li><li><strong>Acquire Element Pieces:</strong> When taking pieces, they might be lucky enough to draw an Element Piece.</li><li><strong>Use Action Cards:</strong> Spends Coins to activate effects from their cards.</li></ul></li><li><strong>End of Turn:</strong> The player declares the end of their turn.</li></ol></div></div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">5. Scoring: Earning Stability Points (SP)</h3><p class="mb-4">Scoring reflects the chemical stability achieved. The judge is responsible for validating and announcing the points.</p><ul class="list-disc list-inside space-y-3"><li><strong>Completing an Octet (1 SP):</strong> Whenever a player achieves a stable configuration on one of their pieces (8 electrons for the Player Piece, or the specific number for an Element, such as 2 for Hydrogen), they <strong>immediately</strong> gain 1 Stability Point.</li><li><strong>Maintaining an Octet (1 SP per octet):</strong> At the beginning of each of their turns, the player gains <strong>1 additional SP</strong> for each octet they have managed to keep complete since the beginning of their previous turn.</li></ul>
-                        <figure class="my-6 text-center">
-                            <img src="https://i.imgur.com/5GmDCKd.png" alt="Example of scoring with a complete octet and duet." class="mx-auto rounded-lg shadow-md max-w-sm w-full">
-                            <figcaption class="mt-2 text-sm text-gray-600 italic">Player A's pieces: player A has completed their octet, the player's piece is bonded to an element, hydrogen, which has its duet complete. Therefore, player A should immediately gain 2 stability points, and if they can maintain this configuration, they will gain 2 more stability points every turn.</figcaption>
+                        <figure id="interactive-diagram-en" class="my-6">
+                           <div class="interactive-diagram-container">
+                                <div class="flex items-center gap-2">
+                                    <div class="electron-stack" data-group="exclusive-electrons-en">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                    <div class="electron-stack" data-group="exclusive-electrons-en">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                    <div class="electron-stack" data-group="exclusive-electrons-en">
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                        <div class="diagram-piece electron-piece">e⁻</div>
+                                    </div>
+                                </div>
+                                <div id="player-a-en" class="diagram-piece player-piece">A</div>
+                                <div class="electron-stack" data-group="shared-electrons-en">
+                                    <div class="diagram-piece electron-piece">e⁻</div>
+                                    <div class="diagram-piece electron-piece">e⁻</div>
+                                </div>
+                                <div id="hydrogen-en" class="diagram-piece element-piece">H</div>
+                           </div>
+                           <figcaption class="mt-4 text-sm text-center text-gray-600 italic">Hover or tap on pieces A and H to see the octets/duets!</figcaption>
+                           <figcaption class="mt-2 text-sm text-gray-600 italic">Player A's pieces: player A has completed their octet, the player's piece is bonded to an element, hydrogen, which has its duet complete. Therefore, player A should immediately gain 2 stability points, and if they can maintain this configuration, they will gain 2 more stability points every turn.</figcaption>
                         </figure>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. End of Game and Winner</h3><ul class="list-disc list-inside space-y-2"><li><strong>End Game Condition:</strong> The game ends when the last Teaching Card is drawn. The player who drew it completes their turn normally. After that, the game concludes.</li><li><strong>Winner:</strong> The player with the most Stability Points is declared the "Master Chemist" and wins the game.</li><li><strong>Tie-breaker Criteria:</strong> In case of a tie, the player with more Equipment Coins wins. If the tie persists, victory is shared.</li></ul></div>
@@ -337,6 +431,53 @@
                 heroContent.style.transform = `translateY(${scrollY * 0.4}px)`;
             }
         });
+        
+        // Interactive Diagram Logic
+        function setupDiagramInteraction(playerSelector, hydrogenSelector, exclusiveSelector, sharedSelector) {
+            const player = document.getElementById(playerSelector);
+            const hydrogen = document.getElementById(hydrogenSelector);
+            const exclusiveElectrons = document.querySelectorAll(`[data-group="${exclusiveSelector}"] .diagram-piece`);
+            const sharedElectrons = document.querySelectorAll(`[data-group="${sharedSelector}"] .diagram-piece`);
+            
+            const highlightPlayer = () => {
+                player.classList.add('highlight');
+                exclusiveElectrons.forEach(el => el.classList.add('highlight'));
+                sharedElectrons.forEach(el => el.classList.add('highlight'));
+            };
+
+            const unhighlightPlayer = () => {
+                player.classList.remove('highlight');
+                exclusiveElectrons.forEach(el => el.classList.remove('highlight'));
+                 if(!hydrogen.matches(':hover') && !hydrogen.matches(':focus')) {
+                    sharedElectrons.forEach(el => el.classList.remove('highlight'));
+                 }
+            };
+
+            const highlightHydrogen = () => {
+                hydrogen.classList.add('highlight');
+                sharedElectrons.forEach(el => el.classList.add('highlight'));
+            };
+            
+            const unhighlightHydrogen = () => {
+                 hydrogen.classList.remove('highlight');
+                 if(!player.matches(':hover') && !player.matches(':focus')) {
+                    sharedElectrons.forEach(el => el.classList.remove('highlight'));
+                 }
+            };
+
+            player.addEventListener('mouseenter', highlightPlayer);
+            player.addEventListener('mouseleave', unhighlightPlayer);
+            player.addEventListener('touchstart', (e) => { e.preventDefault(); highlightPlayer(); }, { passive: false });
+            player.addEventListener('touchend', unhighlightPlayer);
+            
+            hydrogen.addEventListener('mouseenter', highlightHydrogen);
+            hydrogen.addEventListener('mouseleave', unhighlightHydrogen);
+            hydrogen.addEventListener('touchstart', (e) => { e.preventDefault(); highlightHydrogen(); }, { passive: false });
+            hydrogen.addEventListener('touchend', unhighlightHydrogen);
+        }
+
+        setupDiagramInteraction('player-a-pt', 'hydrogen-pt', 'exclusive-electrons-pt', 'shared-electrons-pt');
+        setupDiagramInteraction('player-a-en', 'hydrogen-en', 'exclusive-electrons-en', 'shared-electrons-en');
 
     </script>
 </body>
