@@ -19,7 +19,7 @@
             background-image: linear-gradient(to bottom, #f8fafc, #ffffff);
         }
         .hero {
-            height: 100vh;
+            min-height: 60vh; /* Altura ajustada para formato de página */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -27,7 +27,7 @@
             text-align: center;
             overflow: hidden;
             position: relative;
-            background-color: #e0f2fe; /* Cor de fundo atualizada (sky-100) */
+            background-color: #e0f2fe;
         }
         .hero-background {
             position: absolute;
@@ -54,23 +54,6 @@
         h3 {
            color: #2563eb;
         }
-        .back-to-top {
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .scroll-down-arrow {
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
         .interactive-diagram-container {
             display: flex;
             justify-content: center;
@@ -91,7 +74,6 @@
             color: black;
             border: 2px solid #6b7280;
             background-color: white;
-            cursor: pointer;
             transition: all 0.2s ease-in-out;
             user-select: none;
         }
@@ -107,7 +89,7 @@
             border-color: #9ca3af;
         }
         .electron-piece {
-             width: 35px;
+           width: 35px;
             height: 35px;
         }
         .diagram-piece.highlight {
@@ -127,34 +109,29 @@
     <header id="hero" class="text-gray-800 shadow-2xl relative hero">
         <div class="hero-background"></div>
         <div id="hero-content" class="relative z-10 text-center">
-            <img src="https://i.imgur.com/C1YyNIz.png" alt="Logo Potencial Químico" class="mx-auto mb-6 w-32 h-32 md:w-40 md:h-40">
-            <h1 class="text-5xl md:text-7xl font-bold text-sky-600" data-lang="pt">Potencial Químico</h1>
-            <h1 class="text-5xl md:text-7xl font-bold text-sky-600 hidden" data-lang="en">Chemical Potential</h1>
-            <p class="text-xl md:text-2xl mt-4 text-gray-600" data-lang="pt">O Livro de Regras Oficial</p>
-            <p class="text-xl md:text-2xl mt-4 text-gray-600 hidden" data-lang="en">The Official Rulebook</p>
-        </div>
-        <button id="lang-switcher" class="absolute top-4 right-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-md z-20">
-            <i class="fas fa-globe mr-2"></i>English
-        </button>
-        <div class="scroll-down-arrow absolute bottom-10 text-3xl text-gray-500 z-10">
-            <i class="fas fa-chevron-down"></i>
+            <div class="flex justify-center items-center gap-4 md:gap-8 mb-6">
+                <img src="https://i.imgur.com/C1YyNIz.png" alt="Logo Potencial Químico" class="w-28 h-28 md:w-36 md:h-36">
+                <img src="https://i.imgur.com/S0AK705.png" alt="Logo PET Química UFRN" class="h-24 md:h-28 w-auto">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-sky-600">Potencial Químico</h1>
+            <p class="text-xl md:text-2xl mt-4 text-gray-600">O Livro de Regras Oficial</p>
         </div>
     </header>
 
     <main class="container mx-auto p-4 md:p-8 relative z-10 bg-gray-100">
-        <div data-lang="pt">
-            <!-- PT-BR CONTENT -->
-            <!-- Interactive Summary -->
+        <div>
+            <!-- Sumário Estático -->
             <section id="summary-pt" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Sumário Interativo</h2>
-                <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
-                    <a href="#filosofia-pt" class="bg-gray-200 hover:bg-teal-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Filosofia do Jogo</a>
-                    <a href="#components-pt" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Componentes</a>
-                    <a href="#fast-play-pt" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Jogo Rápido</a>
-                    <a href="#detailed-rules-pt" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Regras Detalhadas</a>
-                    <a href="#about-pt" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Sobre o Projeto</a>
-                    <a href="#credits-pt" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Créditos</a>
-                </nav>
+                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Sumário</h2>
+                <ul class="list-none text-center space-y-2">
+                    <li class="font-bold text-lg text-gray-700">Filosofia do Jogo</li>
+                    <li class="font-bold text-lg text-gray-700">Aplicações e Flexibilidade</li>
+                    <li class="font-bold text-lg text-gray-700">Componentes</li>
+                    <li class="font-bold text-lg text-gray-700">Jogo Rápido</li>
+                    <li class="font-bold text-lg text-gray-700">Regras Detalhadas</li>
+                    <li class="font-bold text-lg text-gray-700">Sobre o Projeto</li>
+                    <li class="font-bold text-lg text-gray-700">Créditos</li>
+                </ul>
             </section>
 
             <!-- Intro -->
@@ -168,6 +145,16 @@
                         <div class="flex justify-center">
                              <img src="https://i.imgur.com/XxhNiTc.png" alt="Ilustração do jogo Potencial Químico" class="rounded-lg shadow-2xl max-w-xs w-full">
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications -->
+            <section id="aplicacoes-pt" class="mb-12">
+                <div class="max-w-4xl mx-auto bg-cyan-50 p-8 rounded-xl shadow-inner">
+                    <div class="text-center">
+                         <h2 class="text-3xl font-bold mb-4 inline-block"><i class="fas fa-cogs mr-2 icon"></i>Aplicações e Flexibilidade</h2>
+                         <p class="text-lg text-gray-700">O Potencial Químico foi projetado para ser uma plataforma de aprendizado versátil. O coração do jogo reside nas <strong>Cartas de Ensino</strong>, que são totalmente personalizáveis. Isso significa que o educador pode adaptar o conteúdo para qualquer tema da química (ou até de outras ciências!), desde ligações químicas e estequiometria até química orgânica e bioquímica. Ao mudar o foco das cartas, o jogo se transforma para atender às necessidades específicas da sala de aula, tornando-se uma ferramenta poderosa para revisar e consolidar o conhecimento em uma vasta gama de assuntos.</p>
                     </div>
                 </div>
             </section>
@@ -236,8 +223,7 @@
                                 </div>
                                 <div id="hydrogen-pt" class="diagram-piece element-piece">H</div>
                            </div>
-                           <figcaption class="mt-4 text-sm text-center text-gray-600 italic">Passe o mouse ou toque nas peças A e H para ver os octetos/duetos!</figcaption>
-                           <figcaption class="mt-2 text-sm text-gray-600 italic">Peças do jogador A: o jogador A completou seu octeto (6 elétrons exclusivos + 2 partilhados). O hidrogênio completou seu dueto (2 elétrons partilhados). O jogador A ganha 2 pontos de estabilidade.</figcaption>
+                           <figcaption class="mt-2 text-sm text-center text-gray-600 italic">Peças do jogador A: o jogador A completou seu octeto (6 elétrons exclusivos + 2 partilhados). O hidrogênio completou seu dueto (2 elétrons partilhados). O jogador A ganha 2 pontos de estabilidade.</figcaption>
                         </figure>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. Fim do Jogo e Vencedor</h3><ul class="list-disc list-inside space-y-2"><li><strong>Condição de Fim de Jogo:</strong> A partida termina quando a última Carta de Ensino for puxada. O jogador que a puxou completa seu turno normalmente. Após isso, o jogo se encerra.</li><li><strong>Vencedor:</strong> O jogador com o maior número de Pontos de Estabilidade é declarado o "Químico Mestre" e vence o jogo.</li><li><strong>Critérios de Desempate:</strong> Em caso de empate, o jogador com mais Moedas de Equipamento vence. Se persistir, a vitória é compartilhada.</li></ul></div>
@@ -252,215 +238,20 @@
 
             <section id="credits-pt" class="mb-12">
                 <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Créditos e Contato</h2>
-                <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center"><p class="text-lg font-semibold">Desenvolvido por</p><p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p><div class="mt-4 border-t pt-4"><p class="text-gray-600">Dúvidas, sugestões ou parcerias?</p><a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"><i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com</a></div></div>
+                <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center"><p class="text-lg font-semibold">Desenvolvido por</p><p class="text-2xl font-bold text-gray-800 mt-1">PET Química UFRN</p><div class="mt-4 border-t pt-4"><p class="text-gray-600">Dúvidas, sugestões ou parcerias?</p><a href="mailto:petquimicaufrn1@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"><i class="fas fa-envelope mr-2"></i>petquimicaufrn1@gmail.com</a></div></div>
             </section>
         </div>
 
-        <div data-lang="en" class="hidden">
-            <!-- ENGLISH CONTENT -->
-            <!-- Interactive Summary -->
-            <section id="summary-en" class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-bars mr-2 icon"></i>Interactive Summary</h2>
-                <nav class="flex flex-wrap justify-center gap-3 md:gap-4">
-                    <a href="#philosophy-en" class="bg-gray-200 hover:bg-teal-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Game Philosophy</a>
-                    <a href="#components-en" class="bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Components</a>
-                    <a href="#fast-play-en" class="bg-gray-200 hover:bg-green-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Fast Play</a>
-                    <a href="#detailed-rules-en" class="bg-gray-200 hover:bg-amber-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Detailed Rules</a>
-                    <a href="#about-en" class="bg-gray-200 hover:bg-purple-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">About the Project</a>
-                    <a href="#credits-en" class="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-full transition-all duration-300">Credits</a>
-                </nav>
-            </section>
-
-            <!-- Intro -->
-            <section id="intro-en" class="mb-12">
-                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div class="text-center md:text-left">
-                            <h2 class="text-3xl font-bold mb-4 inline-block">Welcome to the world of Chemical Potential!</h2>
-                            <p class="text-lg text-gray-600">Get ready for an electrifying journey where your knowledge and cunning will be put to the test. Compete to achieve atomic stability by forming octets, manipulating electrons, and using the power of chemical reactions.</p>
-                        </div>
-                        <div class="flex justify-center">
-                             <img src="https://i.imgur.com/XxhNiTc.png" alt="Illustration of the Chemical Potential game" class="rounded-lg shadow-2xl max-w-xs w-full">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-             <!-- Game Philosophy -->
-            <section id="philosophy-en" class="mb-12">
-                <div class="max-w-4xl mx-auto bg-teal-50 p-8 rounded-2xl shadow-inner">
-                    <h2 class="text-3xl font-bold mb-4 text-center"><i class="fas fa-lightbulb mr-2 icon"></i>A Note on Learning</h2>
-                    <p class="text-center text-lg text-gray-700">It's okay to make mistakes or not know! The main goal of "Chemical Potential" is learning. Each challenge on the Teaching Cards is an opportunity for self-assessment. If you don't know how to explain a concept or solve a question, see it as a sign that perhaps that knowledge isn't fully consolidated yet. The game is a safe space to identify these points and focus on them in your studies, turning doubt into knowledge.</p>
-                </div>
-            </section>
-
-            <!-- Components -->
-            <section id="components-en" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-boxes-stacked mr-2 icon"></i>Game Components</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-user-circle text-4xl text-blue-500 mb-2"></i><p class="font-semibold">Player Pieces</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-book-open text-4xl text-green-500 mb-2"></i><p class="font-semibold">Teaching Cards</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-bolt text-4xl text-yellow-500 mb-2"></i><p class="font-semibold">Action Cards</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-circle text-4xl text-gray-500 mb-2"></i><p class="font-semibold">Electron Pieces</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-atom text-4xl text-purple-500 mb-2"></i><p class="font-semibold">Element Pieces</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-coins text-4xl text-amber-500 mb-2"></i><p class="font-semibold">Equipment Coins</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-university text-4xl text-indigo-500 mb-2"></i><p class="font-semibold">Piece Bank</p></div>
-                    <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"><i class="fas fa-gavel text-4xl text-red-500 mb-2"></i><p class="font-semibold">Answer Key</p></div>
-                </div>
-            </section>
-
-            <!-- Fast Play -->
-            <section id="fast-play-en" class="mb-12 bg-blue-50 p-6 md:p-8 rounded-2xl shadow-inner">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-forward mr-2 icon"></i>Fast Play</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div><h3 class="text-2xl font-bold mb-3">1. Quick Objective</h3><p>Accumulate the most <strong>Stability Points</strong>. Complete octets (8 electrons) on your Player Piece and any Element Pieces you acquire.</p></div>
-                    <div><h3 class="text-2xl font-bold mb-3">2. Quick Setup</h3><ul class="list-disc list-inside space-y-2"><li>Each player chooses a Player Piece.</li><li>Each player receives 3 Action Cards.</li><li>Create the Teaching and Action Card decks.</li><li>Organize the Piece Bank and the coin reserve.</li></ul></div>
-                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">3. How to Play (Summary)</h3><div class="flex flex-col md:flex-row gap-4"><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500"><h4 class="font-bold text-xl mb-2 text-green-600">Phase 1: Teaching/Challenge</h4><p>Draw a Teaching Card. If you answer correctly, gain Score to get Electrons and Equipment Coins.</p></div><div class="flex-1 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500"><h4 class="font-bold text-xl mb-2 text-yellow-600">Phase 2: Action</h4><p>Draw an Action Card. Use your score to take/return Electrons and spend coins to use Action Cards.</p></div></div></div>
-                    <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-3">4. End of Game and Victory</h3><p>The game ends when the Teaching Cards run out. The player with the most <strong>Stability Points</strong> wins!</p></div>
-                </div>
-            </section>
-
-            <!-- Detailed Rules -->
-            <section id="detailed-rules-en" class="mb-12">
-                <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-book mr-2 icon"></i>Detailed Rules</h2>
-                <div class="space-y-8">
-                     <div class="bg-white p-6 rounded-lg shadow-lg" id="pacto-en">
-                        <h3 class="text-2xl font-bold mb-3"><i class="fas fa-handshake mr-2 text-blue-500"></i>The Chemists' Pact</h3>
-                        <p>Before starting, all players should agree to the following: this is a game to learn and have fun. Knowledge will be tested, and it's natural for some players to have an easier time than others. The group commits to creating a respectful environment where no one feels bad for making a mistake or not knowing an answer. Errors are part of the scientific process and learning. Let's play with respect and support one another!</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">1. Overview and Objective</h3><p>In "Chemical Potential," players (5 to 8) delve into the world of chemistry, competing to achieve the greatest stability. The primary objective is to manipulate electrons to complete the "octet" (a configuration of 8 valence electrons) on your Player Piece and on any Element Pieces you control. Each completed and maintained octet generates <strong>Stability Points (SP)</strong>. The player who demonstrates the greatest chemical and strategic mastery, translated into the highest number of points at the end of the game, will be the winner.</p></div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">2. Game Setup</h3><ol class="list-decimal list-inside space-y-3"><li><strong>Choosing the Judge:</strong> One player is designated as the judge (or game master). They do not compete but manage the answer key, validate challenge responses, and oversee scoring.</li><li><strong>Initial Components:</strong> Each player chooses a Player Piece and places it in front of them. Then, each player receives 3 initial Action Cards, which should be kept secret from others.</li><li><strong>Card Decks:</strong> The Teaching Cards are shuffled (either all together or separated by difficulty, at the group's discretion) and form a draw pile. The same is done with the Action Cards.</li><li><strong>Common Reserves:</strong> The Piece Bank (with all Electrons and Elements) and the reserve of Equipment Coins are placed in a central location accessible to all.</li><li><strong>Starting the Game:</strong> It is randomly decided who starts. The game proceeds clockwise from the first player.</li></ol></div>
-                    <div id="velocidade-en" class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">3. Game Speed (Optional Rule)</h3><p class="mb-4">Before starting the game, the group can decide on the game's speed. This adjusts the amount of resources gained and the duration of the match.</p><div class="grid md:grid-cols-2 gap-4"><div class="bg-gray-100 p-4 rounded-lg border"><strong>Standard Speed (1x Factor):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Easy: gain 1 piece/coin</li><li>Medium: gain 2 pieces/coins</li><li>Hard: gain 3 pieces/coins</li></ul></div><div class="bg-gray-100 p-4 rounded-lg border"><strong>Advanced Speed (2x Factor):</strong><ul class="list-disc list-inside ml-4 mt-2"><li>Easy: gain 2 pieces/coins</li><li>Medium: gain 4 pieces/coins</li><li>Hard: gain 6 pieces/coins</li></ul></div></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">4. Game Flow: The Two Phases</h3><p class="mb-4">Each player's turn is divided into two main phases, which occur in sequence: the <strong>Teaching/Challenge Moment</strong> and the <strong>Action Moment</strong>.</p><div class="mt-4 p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg"><h4 class="text-xl font-bold text-green-700 mb-2">4.1. Teaching/Challenge Moment</h4><p>This phase focuses on acquiring knowledge and resources.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Card:</strong> The current player draws the top card from the Teaching Card deck.</li><li><strong>Solve the Challenge:</strong> The player reads the challenge and proposes their answer. The judge consults the answer key and assesses whether the response is correct or sufficiently similar to what is expected.</li><li><strong>Rewards for Success:</strong> If the answer is validated, the player earns a <strong>Score</strong> based on the card's difficulty, multiplied by the game speed factor. This score grants two benefits:<ul class="list-disc list-inside pl-6 mt-1"><li><strong>Potential Electrons:</strong> The right to take OR return from the Bank a number of pieces equal to the final score.</li><li><strong>Equipment Coins:</strong> Immediately receives from the reserve a number of Coins equal to the final score.</li></ul></li><li><strong>Challenge Failure:</strong> If the player answers incorrectly, they do not gain Score, Potential Electrons, or Equipment Coins.</li></ol></div><div class="mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg"><h4 class="text-xl font-bold text-yellow-700 mb-2">4.2. Action Moment</h4><p>In this phase, resources are used strategically.</p><ol class="list-decimal list-inside pl-4 mt-2 space-y-2"><li><strong>Draw Action Card:</strong> The player draws 1 Action Card and adds it to their hand (limit of 5).</li><li><strong>Perform Actions:</strong> The player can perform the following actions in any order:<ul class="list-disc list-inside pl-6 mt-1 space-y-2"><li><strong>Manipulate Electrons:</strong> Uses the earned right to take pieces from the Bank or return excess ones.</li><li><strong>Acquire Element Pieces:</strong> When taking pieces, they might be lucky enough to draw an Element Piece.</li><li><strong>Use Action Cards:</strong> Spends Coins to activate effects from their cards.</li></ul></li><li><strong>End of Turn:</strong> The player declares the end of their turn.</li></ol></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">5. Scoring: Earning Stability Points (SP)</h3><p class="mb-4">Scoring reflects the chemical stability achieved. The judge is responsible for validating and announcing the points.</p><ul class="list-disc list-inside space-y-3"><li><strong>Completing an Octet (1 SP):</strong> Whenever a player achieves a stable configuration on one of their pieces (8 electrons for the Player Piece, or the specific number for an Element, such as 2 for Hydrogen), they <strong>immediately</strong> gain 1 Stability Point.</li><li><strong>Maintaining an Octet (1 SP per octet):</strong> At the beginning of each of their turns, the player gains <strong>1 additional SP</strong> for each octet they have managed to keep complete since the beginning of their previous turn.</li></ul>
-                        <figure id="interactive-diagram-en" class="my-6">
-                           <div class="interactive-diagram-container">
-                               <div class="flex items-center gap-2">
-                                    <div class="electron-stack" data-group="exclusive-electrons-en">
-                                        <div class="diagram-piece electron-piece">e⁻</div><div class="diagram-piece electron-piece">e⁻</div>
-                                    </div>
-                                    <div class="electron-stack" data-group="exclusive-electrons-en">
-                                        <div class="diagram-piece electron-piece">e⁻</div><div class="diagram-piece electron-piece">e⁻</div>
-                                    </div>
-                                     <div class="electron-stack" data-group="exclusive-electrons-en">
-                                        <div class="diagram-piece electron-piece">e⁻</div><div class="diagram-piece electron-piece">e⁻</div>
-                                    </div>
-                                </div>
-                                <div id="player-a-en" class="diagram-piece player-piece">A</div>
-                                <div class="electron-stack" data-group="shared-electrons-en">
-                                    <div class="diagram-piece electron-piece">e⁻</div><div class="diagram-piece electron-piece">e⁻</div>
-                                </div>
-                                <div id="hydrogen-en" class="diagram-piece element-piece">H</div>
-                           </div>
-                           <figcaption class="mt-4 text-sm text-center text-gray-600 italic">Hover or tap on pieces A and H to see the octets/duets!</figcaption>
-                           <figcaption class="mt-2 text-sm text-gray-600 italic">Player A's pieces: player A has completed its octet (6 exclusive electrons + 2 shared). Hydrogen has completed its duet (2 shared electrons). Player A gains 2 stability points.</figcaption>
-                        </figure>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">6. End of Game and Winner</h3><ul class="list-disc list-inside space-y-2"><li><strong>End Game Condition:</strong> The game ends when the last Teaching Card is drawn. The player who drew it completes their turn normally. After that, the game concludes.</li><li><strong>Winner:</strong> The player with the most Stability Points is declared the "Master Chemist" and wins the game.</li><li><strong>Tie-breaker Criteria:</strong> In case of a tie, the player with more Equipment Coins wins. If the tie persists, victory is shared.</li></ul></div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg"><h3 class="text-2xl font-bold mb-3">7. Additional Details and Clarifications</h3><ul class="list-disc list-inside space-y-3"><li><strong>Depleted Piece Bank:</strong> If pieces run out, players cannot acquire more until they are returned.</li><li><strong>Action Card Limit:</strong> A player can hold a maximum of 5 Action Cards.</li><li><strong>Broken Coins:</strong> Coins dropped from a player's piece are discarded.</li><li><strong>Covalent Bonds:</strong> Card effects that allow bonds between players must have their rules specified on the card.</li></ul></div>
-                </div>
-            </section>
-
-            <section id="about-en" class="mb-12 bg-purple-50 p-6 md:p-8 rounded-2xl shadow-inner">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-info-circle mr-2 icon"></i>About the Project</h2>
-                <div class="max-w-4xl mx-auto text-center"><p class="text-lg text-gray-700 leading-relaxed">"Chemical Potential" was conceived as an educational tool, designed to transform learning chemistry into an interactive and strategic experience. The main objective is to offer an adaptable resource that can be used in both high school and higher education, reinforcing fundamental chemical concepts through engaging gameplay that balances knowledge, strategy, and a bit of luck.</p></div>
-            </section>
-
-            <section id="credits-en" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6 text-center"><i class="fas fa-users mr-2 icon"></i>Credits and Contact</h2>
-                <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg text-center"><p class="text-lg font-semibold">Developed by</p><p class="text-2xl font-bold text-gray-800 mt-1">Arthur</p><div class="mt-4 border-t pt-4"><p class="text-gray-600">Questions, suggestions, or partnerships?</p><a href="mailto:arthurldfs@gmail.com" class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"><i class="fas fa-envelope mr-2"></i>arthurldfs@gmail.com</a></div></div>
-            </section>
-        </div>
     </main>
     
     <footer class="bg-gray-800 text-white text-center p-6 mt-12">
-        <p data-lang="pt">&copy; 2025 Potencial Químico.</p>
-        <p data-lang="en" class="hidden">&copy; 2025 Chemical Potential.</p>
+        <div class="flex justify-center items-center mb-4">
+            <img src="https://i.imgur.com/S0AK705.png" alt="Logo PET Química UFRN" class="h-20">
+        </div>
+        <p>&copy; 2025 Potencial Químico.</p>
     </footer>
 
-    <a href="#" id="back-to-top" class="back-to-top fixed bottom-8 right-8 bg-cyan-500 hover:bg-cyan-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible z-50">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <script>
-        const langSwitcher = document.getElementById('lang-switcher');
-        const ptElements = document.querySelectorAll('[data-lang="pt"]');
-        const enElements = document.querySelectorAll('[data-lang="en"]');
-        let currentLang = 'pt';
-
-        langSwitcher.addEventListener('click', () => {
-            if (currentLang === 'pt') {
-                ptElements.forEach(el => el.classList.add('hidden'));
-                enElements.forEach(el => el.classList.remove('hidden'));
-                langSwitcher.innerHTML = '<i class="fas fa-globe mr-2"></i>Português';
-                document.documentElement.lang = 'en';
-                currentLang = 'en';
-            } else {
-                enElements.forEach(el => el.classList.add('hidden'));
-                ptElements.forEach(el => el.classList.remove('hidden'));
-                langSwitcher.innerHTML = '<i class="fas fa-globe mr-2"></i>English';
-                document.documentElement.lang = 'pt-BR';
-                currentLang = 'pt';
-            }
-        });
-
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-
-        const heroContent = document.getElementById('hero-content');
-        window.addEventListener('scroll', () => {
-            let scrollY = window.scrollY;
-            if (scrollY < window.innerHeight) {
-                heroContent.style.transform = `translateY(${scrollY * 0.4}px)`;
-            }
-        });
-        
-        // Interactive Diagram Logic
-        function setupDiagramInteraction(playerSelector, hydrogenSelector, exclusiveSelector, sharedSelector) {
-            const player = document.getElementById(playerSelector);
-            const hydrogen = document.getElementById(hydrogenSelector);
-            const exclusiveElectrons = document.querySelectorAll(`[data-group="${exclusiveSelector}"] .diagram-piece`);
-            const sharedElectrons = document.querySelectorAll(`[data-group="${sharedSelector}"] .diagram-piece`);
-            
-            function toggleHighlight(elements, force) {
-                elements.forEach(el => el.classList.toggle('highlight', force));
-            }
-
-            player.addEventListener('click', () => {
-                const isActive = !player.hasAttribute('data-active');
-                player.toggleAttribute('data-active', isActive);
-                
-                toggleHighlight([player, ...exclusiveElectrons, ...sharedElectrons], isActive);
-
-                if (isActive && hydrogen.hasAttribute('data-active')) {
-                     hydrogen.removeAttribute('data-active');
-                     toggleHighlight([hydrogen], false);
-                }
-            });
-
-            hydrogen.addEventListener('click', () => {
-                 const isActive = !hydrogen.hasAttribute('data-active');
-                hydrogen.toggleAttribute('data-active', isActive);
-
-                toggleHighlight([hydrogen, ...sharedElectrons], isActive);
-                
-                 if (isActive && player.hasAttribute('data-active')) {
-                    player.removeAttribute('data-active');
-                    toggleHighlight([player, ...exclusiveElectrons], false);
-                }
-            });
-        }
-
-        setupDiagramInteraction('player-a-pt', 'hydrogen-pt', 'exclusive-electrons-pt', 'shared-electrons-pt');
-        setupDiagramInteraction('player-a-en', 'hydrogen-en', 'exclusive-electrons-en', 'shared-electrons-en');
-
-    </script>
 </body>
 </html>
+
+
